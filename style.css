@@ -1,4 +1,4 @@
-html, body, h1 {
+html, body{
     margin: 0;
     padding: 0;
     background-color: #F7F4F2;
@@ -27,5 +27,17 @@ nav a {
 }
 
 .hero {
+    padding: 3rem 1rem;
+    text-align: center;
     background-image:url('herobanner.png');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    padding: 0rem;
+    margin:0rem;
 }
