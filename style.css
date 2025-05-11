@@ -8,7 +8,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
+}
+
+header .logo {
+    display:flex;
+    width: 200px;
+    height: 100px;
+    padding:0rem;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #1F1F1F;
+    font-weight: bold;
 }
 
 .hero {
