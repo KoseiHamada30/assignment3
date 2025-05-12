@@ -2,7 +2,7 @@
 .alexandria {
     font-family: "Alexandria", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 500;
     font-style:normal;
   }
 
@@ -28,8 +28,8 @@ header {
 
 header .logo {
     display:flex;
-    width: 70px;
-    height: 60px;
+    width: 5%;
+    height: 3%;
     padding:0rem;
     object-fit: contain;
 }
