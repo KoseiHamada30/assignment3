@@ -1,20 +1,16 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
-
-
-
 .alexandria {
     font-family: "Alexandria", sans-serif;
     font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+    font-weight: 200;
+    font-style:normal;
   }
 
 html, body{
     margin: 0;
     padding: 0;
     background-color: #F7F4F2;
-    font-family: Alexandria;
+    font-family:Alexandria;
 }
 
 h3 {
@@ -42,7 +38,7 @@ nav a {
     margin: 0 1rem;
     text-decoration: none;
     color: #1F1F1F;
-    font-weight: bold;
+    font-weight:normal;
 }
 
 .hero {
