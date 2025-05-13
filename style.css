@@ -12,6 +12,8 @@ html, body{
     font-family:Alexandria;
 }
 
+/*navigation*/
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,7 +24,45 @@ html, body{
     position: sticky;
     top: 0;
     z-index: 1000;
+    font-style: normal;
 }
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon-link {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: var(--accent-color);
+}
+
+/*end of navigation*/
 
 h3 {
     font-family: "Alexandria", sans-serif;
