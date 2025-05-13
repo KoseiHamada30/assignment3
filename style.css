@@ -9,7 +9,6 @@ html, body{
     margin: 0;
     padding: 0;
     background-color: #F7F4F2;
-    font-family:Alexandria;
 }
 
 /*navigation*/
@@ -24,6 +23,7 @@ html, body{
     position: sticky;
     top: 0;
     z-index: 1000;
+    font-family: Alexandria;
     font-style: normal;
 }
 
@@ -63,6 +63,25 @@ html, body{
 }
 
 /*end of navigation*/
+
+/*hero banner*/
+
+.hero {
+    background-image: url('herobanner.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 0 0 30px 30px;
+}
+
+
 
 h3 {
     font-family: "Alexandria", sans-serif;
