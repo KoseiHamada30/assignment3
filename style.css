@@ -54,9 +54,10 @@ html, body{
 }
 
 .icon-link {
-    color: var(--primary-color);
+    color:black;
     font-size: 1.2rem;
     transition: color 0.3s ease;
+    font-style:solid;
 }
 
 .icon-link:hover {
@@ -102,8 +103,31 @@ html, body{
 
 /*end of hero banner*/
 
+/*tab menu*/
 
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
 
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color:darkgray;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color:#F7F4F2;
+    color:darkgray;
+}
+
+/*end of tab menu*/
 
 
 /*
