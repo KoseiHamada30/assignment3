@@ -267,7 +267,10 @@ html, body{
     text-align: center;
     background-color:#B7AC9D;
     border-radius: 40px;
-    margin: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
     padding: 0rem;
     box-shadow: 2px 3px 10px 10px rgb(173, 173, 173);
 }
@@ -315,6 +318,47 @@ html, body{
 }
 
 /* end of what we offer */
+
+/* Mega Clearance */
+.mega-clearance {
+    padding: 1rem 5%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.mega-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align:justify;
+}
+
+.mega-clearance h2 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.show-more {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color:#B7AC9D;
+    color:#1F1F1F;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Alexandria;
+    font-size: 1.5rem;
+}
+
+.show-more:hover {
+    color:#F7F4F2;
+    transition: color 0.3s ease;
+}
+
+/*end of mega clearance*/
 
 /*
 
