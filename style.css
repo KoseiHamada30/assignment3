@@ -72,7 +72,7 @@ html, body{
     background-image: url('herobanner.png');
     background-size: cover;
     background-position: center;
-    height: 520px;
+    height: 580px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,7 +84,7 @@ html, body{
 
 .hero h1 {
     font-size: 5rem;
-    margin-top: 280px;
+    margin-top: 370px;
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
     font-weight:bold;
@@ -104,6 +104,19 @@ html, body{
 /*end of hero banner*/
 
 /*tab menu*/
+.category-parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding:0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 100px;
+    background-color:#B7AC9D;
+    box-shadow: 5px 5px 15px 5px rgb(130, 130, 130);
+}
 
 .category-filter {
     display: flex;
