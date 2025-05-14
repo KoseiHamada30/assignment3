@@ -1,7 +1,7 @@
 .alexandria {
     font-family: "Alexandria", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 300;
     font-style:normal;
 }
 
@@ -111,18 +111,18 @@ html, body{
     padding:0;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
     border-radius: 100px;
     background-color:#B7AC9D;
-    box-shadow: 5px 5px 15px 5px rgb(130, 130, 130);
+    box-shadow: 2px 3px 10px 5px rgb(130, 130, 130);
 }
 
 .category-filter {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
+    gap: 0rem;
+    padding: 1rem;
     flex-wrap: wrap;
 }
 
@@ -133,7 +133,7 @@ html, body{
 
 .filter-btn {
     font-family: Alexandria;
-    font-weight: normal;
+    font-weight:initial;
     font-size: 30px;
     padding: 0.5rem 1.3rem;
     border: none;
@@ -152,6 +152,112 @@ html, body{
 
 /*end of tab menu*/
 
+/*product card*/
+.product-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.product-card {
+    box-shadow: 2px 3px 10px 10px rgb(173, 173, 173);
+    background-color: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.product-card h3 {
+    font-family: Alexandria;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: inherit;
+    margin:0;
+}
+
+.initial {
+    font-family: Alexandria;
+    color:#919191;
+    font-weight:inherit;
+    padding-left: 1rem;
+    margin:0;
+}
+
+.price {
+    font-family: Alexandria;
+    padding: 0 1rem 1rem;
+    font-weight:inherit;
+    color:#DF0000;
+    font-size:x-large;
+    margin:0;
+}
+
+.new-badge {
+    font-family: Alexandria;
+    font-weight:initial;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color:#919191;
+    color:#F7F4F2;
+    border-radius: 20px;
+    border: none;
+    width:auto;
+}
+
+.value-badge {
+    font-family: Alexandria;
+    font-weight:initial;
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    background-color:#DF0000;
+    color:#F7F4F2;
+    border-radius: 5px;
+    border: none;
+    width:auto;
+}
+
+.stock-badge {
+    font-family: Alexandria;
+    font-weight:initial;
+    position: absolute;
+    bottom: 2.5rem;
+    right: 1.5rem;
+    background-color:#FFFEFE;
+    color:#1F1F1F;
+    border-radius: 5px;
+    border: none;
+    width:auto;
+}
 
 /*
 h3 {
