@@ -434,6 +434,61 @@ html, body{
 
 /*end of reviews*/
 
+/* Newsletter */
+.newsletter {
+    padding: 4rem 5%;
+    margin: 2rem 5%;
+    border-radius: 3.5rem;
+    text-align: center;
+    background-color:#311F10;
+    color: var(--white);
+    box-shadow: 2px 3px 10px 10px rgb(102, 102, 102);
+}
+
+.newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-top:0;
+    color: #F7F4F2;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 15px;
+    background-color: #1F1F1F;
+    color: #909090;
+    font-family: Alexandria;
+    font-weight: inherit;
+}
+
+.newsletter-form button {
+    padding: 1rem 2rem;
+    background-color:#F7F4F2;
+    color: var(--white);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Alexandria;
+}
+
+.newsletter-form button:hover {
+    background-color:#b49e7f;
+}
+
+/*end of news letter*/
+
+
+
 /*
 
 
