@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Furniture People</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
             <img src="logo.jpg" alt="TFP Logo">
         </div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="nav-links">
             <a href="#" class="nav-link">New Arrival</a>
             <a href="#" class="nav-link">Clearance</a>
@@ -25,9 +27,9 @@
             <a href="#" class="nav-link">Bedroom</a>
         </div>
         <div class="nav-icons">
-            <a href="#" class="icon-link"><i class="fa fa-search"></i></i></a>
-            <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
-            <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#" class="icon-link" aria-label="Search"><i class="fa fa-search fa-2x"></i></a>
+            <a href="#" class="icon-link" aria-label="User account"><i class="fas fa-user fa-2x"></i></a>
+            <a href="#" class="icon-link" aria-label="Shopping cart"><i class="fas fa-shopping-cart fa-2x"></i></a>
         </div>
     </nav>
 
@@ -198,7 +200,9 @@
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
                     <h3>Niko Harrison</h3>
-                    <i>"The bed shipped very quickly and was even easier to set up on my own. When assembled, the bed feels very solid and well-made. I've used it for over a month now with zero movement or other issues."</i>
+                    <i>"The bed shipped very quickly and was even easier to set up on my own. When assembled, the bed feels very solid and well-made.</i>
+                    <br>
+                    <i>I've used it for over a month now with zero movement or other issues."</i> 
                 </div>
             </div>
             <div class="carousel-dots">
@@ -263,5 +267,30 @@
         </footer>
 
     </main>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.navbar');
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu when window is resized above mobile breakpoint
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 390) {
+                document.querySelector('.nav-links').classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
