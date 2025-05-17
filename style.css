@@ -388,13 +388,10 @@ html, body{
     opacity: 80%;
     border-radius: 50px;
     font-family: Alexandria;
-    max-width: 30vw;
-    max-height: 65vw;
     margin:  auto;
     padding: 2rem;
     text-align: center;
     margin-left: 70%;
-    margin-right: 1rem;
     box-shadow: 2px 3px 10px 10px rgb(69, 69, 69);
 }
 
@@ -456,10 +453,11 @@ html, body{
 }
 
 .newsletter-form {
-    max-width: 500px;
+    max-width: 60vw;
     margin: 2rem auto 0;
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
 .newsletter-form input {
@@ -574,6 +572,10 @@ footer {
         font-size: 1.6vw;
     }
 
+    .nav-icons a{
+        font-size: 1.2vw;
+    }
+
     .icon-link {
         font-size: 1.5vw;
     }
@@ -588,12 +590,18 @@ footer {
     }
 
     .review-card {
-        max-width: 25vw;
-        margin-left: 65%;
+        max-width: 35vw;
+        height: 40vw;
+        margin-left: 55%;
     }
 
     .review-card i {
-        font-size: 1.5vw;
+        font-size: 2vw;
+        margin-top: 3rem;
+    }
+
+    .offer-card {
+        margin-bottom: 0rem;
     }
 
     .what-we-offer {
@@ -601,7 +609,25 @@ footer {
     }
 
     .what-we-offer h2 {
-        font-size: 3rem;
+        font-size: 4.5rem;
+    }
+
+    .what-we-offer h3 {
+        font-size: 3.5vw;
+        font-weight:initial;
+        margin-top: 0rem;
+    }
+
+    .mega-clearance h2 {
+        font-size: 4.5rem;
+    }
+    
+    .newsletter-form input {
+        padding: 1.3rem;
+    }
+
+    .newsletter-form button {
+        padding: 0.7rem;
     }
 }
 
@@ -749,7 +775,6 @@ footer {
 
     .what-we-offer h2 {
         font-size: 12vw;
-        font-weight: normal;
     }
 
     .offer-card {
@@ -798,7 +823,6 @@ footer {
         border-radius: 4vw;
     }
 
-    /* Hide any product cards after the third one */
     .mega-container .product-card:nth-child(n+4) {
         display: none;
     }
@@ -834,8 +858,12 @@ footer {
         font-size: 4vw;
     }
 
+    .reviews {
+        padding-bottom: 1rem;
+    }
+
     .review-carousel {
-        height: 120vw;
+        height: 80vw;
         border-radius: 5vw;
     }
 
@@ -843,10 +871,12 @@ footer {
         max-width: 80vw;
         margin: 0 auto;
         padding: 1rem;
+        height: 80vw;
     }
 
     .review-card h3 {
         font-size: 5vw;
+        margin-bottom: 2rem;
     }
 
     .review-card i {
@@ -855,6 +885,7 @@ footer {
 
     .stars {
         font-size: 6vw;
+        margin-bottom: 1rem;
     }
 
     .newsletter {
@@ -864,12 +895,22 @@ footer {
     }
 
     .newsletter h2 {
-        font-size: 6vw;
+        font-size: 6.5vw;
     }
 
     .newsletter-form {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .newsletter-form input {
+        max-width: 70vw;
+        padding: 1rem;
+    }
+
+    .newsletter-form button {
+        max-width: 35vw;
+        padding: 0.5rem;
     }
 
     .newsletter-form input,
@@ -878,8 +919,12 @@ footer {
         font-size: 4vw;
     }
 
+    footer {
+        padding: 2rem 2%;
+    }
+
     .footer-logo h2 {
-        font-size: 8vw;
+        font-size: 10vw;
     }
 
     .social-links {
@@ -887,7 +932,7 @@ footer {
     }
 
     .social-links a {
-        font-size: 6vw;
+        font-size: 3vw;
     }
 
     .footer-columns {
