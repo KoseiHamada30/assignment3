@@ -106,44 +106,45 @@ html, body{
 
 /*tab menu*/
 .category-parent {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding:0;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin: 3rem 4rem;
     border-radius: 100px;
     background-color:#B7AC9D;
     box-shadow: 2px 3px 10px 5px rgb(130, 130, 130);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.category-parent::-webkit-scrollbar {
+    display: none;
 }
 
 .category-filter {
-    display: flex;
-    justify-content: center;
-    gap: 0rem;
+    display: inline-flex;
     padding: 1rem;
-    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    font-family: Alexandria;
+    font-weight: initial;
+    font-size: 30px;
+    padding: 0.5rem 1.3rem;
+    border: none;
+    margin: 0.5rem;
+    color: #D6D3CE;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #B7AC9D;
+    white-space: nowrap;
 }
 
 .filter-btn:hover {
     color: #F7F4F2;
     transform: translateY(-2px);
-}
-
-.filter-btn {
-    font-family: Alexandria;
-    font-weight:initial;
-    font-size: 30px;
-    padding: 0.5rem 1.3rem;
-    border: none;
-    margin:0.5rem;
-    color:#D6D3CE;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color:#B7AC9D;
 }
 
 .filter-btn.active {
@@ -669,37 +670,77 @@ footer {
 
     .category-filter {
         padding: 0.5rem;
+        gap: 0.3rem;
     }
 
     .filter-btn {
         font-size: 4vw;
         padding: 0.3rem 0.8rem;
+        margin: 0.3rem;
     }
 
     .product-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
         gap: 1rem;
         padding: 1rem 5%;
     }
 
+    .product-grid::-webkit-scrollbar {
+        display: none;
+    }
+
     .product-card {
+        min-width: 80vw;
+        flex: 0 0 auto;
+        margin-right: 1rem;
         border-radius: 4vw;
     }
 
+    .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
     .product-card h3 {
+        white-space: normal;
         font-size: 4.5vw;
     }
 
     .initial {
+        white-space: normal;
         font-size: 4vw;
     }
 
     .price {
+        white-space: normal;
         font-size: 5vw;
     }
 
     .new-badge, .value-badge, .stock-badge {
         font-size: 3vw;
+    }
+
+    /* Ensure overlay works properly with horizontal scroll */
+    .product-card:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
     }
 
     .what-we-offer {
