@@ -835,14 +835,17 @@ footer {
     .nav-links.show {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        float:left;
         gap: 1rem;
+        width: 100%;
+        padding-left: 1rem;
     }
 
     .nav-link {
         font-size: 4.5vw;
         width: 100%;
-        text-align: center;
+        text-align: left;
         padding: 0.5rem 0;
     }
 }
