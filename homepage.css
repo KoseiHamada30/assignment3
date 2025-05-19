@@ -598,6 +598,7 @@ footer {
         gap: 1.5rem;
         padding: 2rem 2%;
     }
+
     .mega-container {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -706,7 +707,7 @@ footer {
     }
 
     .hero {
-        height: 60vw;
+        height: 50vw;
         border-radius: 0 0 8vw 8vw;
     }
 

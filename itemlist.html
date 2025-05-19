@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lounge Suites Collection | TFP</title>
+    <link rel="stylesheet" href="itemlist.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="TFP Logo">
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="#" class="nav-link">New Arrival</a>
+            <a href="#" class="nav-link">Clearance</a>
+            <a href="seating.html" class="nav-link">Seating</a>
+            <a href="#" class="nav-link">Living</a>
+            <a href="#" class="nav-link">Dining</a>
+            <a href="#" class="nav-link">Bedroom</a>
+        </div>
+        <div class="nav-icons">
+            <a href="#" class="icon-link" aria-label="Search"><i class="fa fa-search fa-2x"></i></a>
+            <a href="#" class="icon-link" aria-label="User account"><i class="fas fa-user fa-2x"></i></a>
+            <a href="#" class="icon-link" aria-label="Shopping cart"><i class="fas fa-shopping-cart fa-2x"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Lounge Suites Collection</h1>
+                <p class="subtitle">Our sofas don’t just bring comfort and style to your living room
+                    — they’re also fully customizable in style and size.</p>
+            </div>
+        </section>
+        <div class="filter-row">
+            <button class="filter-btn">Filter <i class="fa fa-sliders-h"></i></button>
+        </div>
+        <h2 class="section-title">Corner Lounge Collection</h2>
+        <section class="product-list">
+            <div class="product-card">
+                <img src="stonnington.png" alt="Stonnington Modular Sofa">
+                <div class="product-info">
+                    <h3>Stonnington Modular Sofa</h3>
+                    <div class="price-row">
+                        <span class="old-price">$6000</span>
+                        <span class="price">$2399</span>
+                    </div>
+                    <div class="badges">
+                        <span class="badge best-value">Best Value</span>
+                        <span class="badge in-stock">In Stock</span>
+                        <span class="badge new">New</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="kenedy.png" alt="Kenedy Modular Sofa">
+                <div class="product-info">
+                    <h3>Kenedy Modular Sofa</h3>
+                    <div class="price-row">
+                        <span class="old-price">$4450</span>
+                        <span class="price">$2699</span>
+                    </div>
+                    <div class="badges">
+                        <span class="badge in-stock">In Stock</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="alison.png" alt="Alison L-Shaped Fabric 3 Seater">
+                <div class="product-info">
+                    <h3>Alison L-Shaped Fabric 3 Seater</h3>
+                    <div class="price-row">
+                        <span class="old-price">$2850</span>
+                        <span class="price">$1899</span>
+                    </div>
+                    <div class="badges">
+                        <span class="badge best-value">Best Value</span>
+                        <span class="badge in-stock">In Stock</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="parilla.png" alt="Parilla L-Shaped Fabric Lounge Suite">
+                <div class="product-info">
+                    <h3>Parilla L-Shaped Fabric Lounge Suite</h3>
+                    <div class="price-row">
+                        <span class="old-price">$2950</span>
+                        <span class="price">$1750</span>
+                    </div>
+                    <div class="badges">
+                        <span class="badge in-stock">In Stock</span>
+                        <span class="badge new">New</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.navbar');
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu when window is resized above mobile breakpoint
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 390) {
+                document.querySelector('.nav-links').classList.remove('show');
+            }
+        });
+    </script>
+
+</body>
+</html>
