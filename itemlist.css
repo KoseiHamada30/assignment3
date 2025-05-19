@@ -133,10 +133,10 @@ html, body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 1rem 2rem 0.5rem 2rem;
+    margin: 1.5rem 2rem 0.5rem 2rem;
 }
 .filter-btn {
-    background: #E0DED9;
+    background: #919191;
     color: #1F1F1F;
     border: none;
     border-radius: 1.5rem;
@@ -145,7 +145,6 @@ html, body {
     font-family: var(--font-main);
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    transition: background 0.2s, color 0.2s;
 }
 .filter-btn:hover {
     background: var(--accent);
@@ -153,7 +152,7 @@ html, body {
 }
 
 .section-title {
-    font-family: var(--font-title);
+    font-family: Alexandria;
     font-size: 2rem;
     margin: 2rem 2rem 1rem 2rem;
     color: #1F1F1F;
@@ -165,10 +164,11 @@ html, body {
     gap: 2rem;
     padding: 0 2rem 2rem 2rem;
 }
+
 .product-card {
-    background: var(--card-bg);
+    background:#F7F4F2;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: 2px 3px 10px 5px rgb(173, 173, 173);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -177,45 +177,75 @@ html, body {
     position: relative;
     transition: box-shadow 0.2s, transform 0.2s;
 }
+
 .product-card img {
     width: 12rem;
     height: 9rem;
     object-fit: cover;
     border-radius: 1.5rem;
-    background: #eee;
+    background:#F7F4F2;
 }
+
+.product-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38vw;
+  border-radius: 4vw;
+  opacity: 0;
+  transition: .5s ease;
+  padding: 1.2rem 4vw;
+}
+
 .product-info {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
+
 .product-info h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 1rem 0 0.5rem 0;
     font-size: 1.3rem;
-    font-family: var(--font-main);
-    font-weight: 600;
+    font-family:Alexandria;
+    font-weight:initial;
 }
 .price-row {
     display: flex;
     align-items: baseline;
     gap: 1rem;
 }
+
 .old-price {
-    color: #aaa;
+    color: #919191;
     text-decoration: line-through;
-    font-size: 1rem;
+    font-family: Alexandria;
+    color: #919191;
+    font-weight: inherit;
+    padding-left: 0.5rem;
+    margin: 0;
 }
+
 .price {
-    color: var(--accent);
-    font-size: 1.3rem;
-    font-weight: bold;
+    color:#DF0000;
+    font-family: Alexandria;
+    font-weight:bold;
+    padding-left: 0.5rem;
+    margin: 0;
 }
+
 .badges {
     display: flex;
     gap: 0.5rem;
     margin-top: 0.5rem;
 }
+
 .badge {
     display: inline-block;
     padding: 0.3rem 0.8rem;
@@ -226,14 +256,43 @@ html, body {
     background: #aaa;
     font-weight: 500;
 }
+
 .badge.best-value {
-    background: var(--accent);
+    background:#DF0000;
+    font-family: Alexandria;
+    font-weight: initial;
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    background-color: #DF0000;
+    color: #F7F4F2;
+    border: none;
+    width: auto;
 }
+
 .badge.in-stock {
     background: #767676;
+    font-family: Alexandria;
+    font-weight: initial;
+    position: absolute;
+    bottom: 2.5rem;
+    right: 1.5rem;
+    color: #F7F4F2;
+    border: none;
+    width: auto;
 }
+
 .badge.new {
-    background: #1F1F1F;
+    font-family: Alexandria;
+    font-weight:initial;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    background-color:#919191;
+    color:#F7F4F2;
+    border-radius: 20px;
+    border: none;
+    width:auto;
 }
 
 /* Responsive Design */
@@ -357,7 +416,7 @@ html, body {
     }
 
     .filter-row {
-        margin: 2vw 4vw 2vw 4vw;
+        margin: 5vw 4vw 4vw 4vw;
     }
 
     .filter-btn {
@@ -368,17 +427,18 @@ html, body {
 
     .section-title {
         font-size: 6vw;
-        margin: 4vw 4vw 2vw 4vw;
+        font-weight: initial;
+        margin: 4vw 4vw 7vw 4vw;
     }
     .product-list {
         gap: 5vw;
-        padding: 0 2vw 6vw 2vw;
+        padding: 0.5rem 5%;
     }
     .product-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 2vw;
-        padding: 4vw;
+        padding: 1.2rem 4vw;
         border-radius: 6vw;
     }
     .product-card img {
@@ -391,21 +451,20 @@ html, body {
     }
     .price-row {
         gap: 3vw;
+        margin-bottom: 0rem;
     }
     .old-price {
         font-size: 4vw;
     }
     .price {
-        font-size: 5vw;
+        white-space: normal;
+        font-size: 6vw;
     }
-    .badges {
-        gap: 2vw;
-        margin-top: 2vw;
-    }
+
     .badge {
-        font-size: 3vw;
+        font-size: 2.5vw;
         border-radius: 3vw;
-        padding: 1vw 4vw;
+        padding: 1vw 3%;
     }
 }
 

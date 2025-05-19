@@ -601,6 +601,7 @@ footer {
 
     .mega-container {
         grid-template-columns: repeat(3, 1fr);
+        padding: 0rem 2%;
     }
 
     .review-card {
