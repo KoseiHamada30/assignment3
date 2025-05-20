@@ -64,6 +64,7 @@
                 <button class="value-badge">BEST VALUE</button>
                 <button class="stock-badge">IN STOCK</button>
             </div>
+
             <!--first one is completed-->
 
             <div class="product-card">
@@ -319,7 +320,7 @@
                 if (!isIPhone12Pro()) return;
                 currentIndex = (currentIndex + 1) % cards.length;
                 scrollToCard(currentIndex);
-            }, 4000);
+            }, 100000);
         }
         function autoScrollMegaContainer() {
             if (!isIPhone12Pro()) return;
@@ -340,7 +341,7 @@
                 if (!isIPhone12Pro()) return;
                 currentIndex = (currentIndex + 1) % cards.length;
                 scrollToCard(currentIndex);
-            }, 4000);
+            }, 100000);
         }
         document.addEventListener('DOMContentLoaded', function() {
             autoScrollProductGrid();

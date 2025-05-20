@@ -183,7 +183,6 @@ html, body{
 .product-card img {
     width:  100%;
     height: 190px;
-    object-fit: cover;
     background: #F7F4F2;
 }
 
@@ -197,11 +196,11 @@ html, body{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 38vw;
+    width:  100%;
+    height: 190px;
     border-radius: 4vw;
     opacity: 0;
     transition: .5s ease;
-    padding: 1.2rem 4vw;
 }
 
 .product-card h3 {
@@ -740,7 +739,7 @@ footer {
         margin: 0.3rem;
     }
 
-    .product-grid {
+    .product-grid, .mega-container {
         display: flex;
         overflow-x: auto;
         white-space: nowrap;
@@ -751,17 +750,24 @@ footer {
         padding: 1rem 5%;
     }
 
-    .product-grid::-webkit-scrollbar {
+    .product-grid::-webkit-scrollbar, .mega-container::-webkit-scrollbar {
         display: none;
     }
 
     .product-card {
-        padding: 1.2rem 4vw;
-        min-width: 80vw;
-        min-height: unset;
-        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vw;
+        padding: 1rem 3vw 0.4rem 3vw;
         border-radius: 6vw;
+        min-width: 80vw;
+        flex: 0 0 auto;
         margin: 0rem 2%;
+        box-shadow: 1px 3px 15px 7px rgb(173, 173, 173);
+        background: #F7F4F2;
+        position: relative;
+        transition: box-shadow 0.2s, transform 0.2s;
     }
 
     .product-card img {
@@ -769,41 +775,68 @@ footer {
         height: 38vw;
         border-radius: 4vw;
         object-fit: cover;
+        background: #F7F4F2;
+        display: block;
     }
 
-    .product-card h3 {
-        white-space: normal;
-        font-size: 4.5vw;
-    }
-
-    .initial {
-        white-space: normal;
-        font-size: 4vw;
-    }
-
-    .price {
-        white-space: normal;
-        font-size: 5vw;
-    }
-
-    .new-badge, .value-badge, .stock-badge {
-        font-size: 3vw;
+    .product-card .overlay {
+        padding: 1rem 0vw 0.4rem 0vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:  100%;
+        height: 38vw;
+        border-radius: 4vw;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        z-index: 2;
     }
 
     .product-card:hover .overlay {
         opacity: 1;
     }
 
-    .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
+    .overlay img {
         width: 100%;
-        opacity: 0;
-        transition: .5s ease;
+        height: 38vw;
+        border-radius: 4vw;
+        object-fit: cover;
+        display: block;
+    }
+
+    .product-card h3 {
+        font-size: 5vw;
+        margin: 0.5rem 0 0.5rem 0;
+        font-family: Alexandria;
+        font-weight: initial;
+        padding-left: 0.5rem;
+        white-space: normal;
+    }
+
+    .initial {
+        font-size: 4vw;
+        color: #919191;
+        font-family: Alexandria;
+        font-weight: inherit;
+        padding-left: 1rem;
+        margin: 0;
+        white-space: normal;
+    }
+
+    .price {
+        font-size: 6vw;
+        color: #DF0000;
+        font-family: Alexandria;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+        white-space: normal;
+    }
+
+    .new-badge, .value-badge, .stock-badge {
+        font-size: 3vw;
+        border-radius: 3vw;
+        padding: 1vw 3%;
     }
 
     .what-we-offer {
@@ -837,22 +870,6 @@ footer {
 
     .mega-clearance h2 {
         font-size: 11vw;
-    }
-
-    .mega-container {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        gap: 1rem;
-        padding: 1rem 5%;
-        max-width: 100%;
-    }
-
-    .mega-container::-webkit-scrollbar {
-        display: none;
     }
 
     .mega-container .product-card {
