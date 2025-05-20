@@ -38,84 +38,125 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Lounge Suites Collection</h1>
-                <p class="subtitle">Our sofas don’t just bring comfort and style to your living room
-                    — they’re also fully customizable in style and size.</p>
+                <p class="subtitle">Our sofas don't just bring comfort and style to your living room
+                    — they're also fully customizable in style and size.</p>
             </div>
         </section>
-        <div class="filter-row">
-            <button class="filter-btn">Filter <i class="fa fa-sliders-h"></i></button>
+        <div class="main-content">
+            <div class="filter-row">
+                <button class="filter-btn" id="openFilter">Filter <i class="fa fa-sliders-h"></i></button>
+            </div>
+            <div class="filter-overlay" id="filterOverlay"></div>
+            <aside class="sidebar" id="sidebar">
+                <button class="close-sidebar" id="closeSidebar" style="display:none;position:absolute;top:1rem;right:1rem;font-size:2rem;background:none;border:none;z-index:2100;">&times;</button>
+                <form class="filters">
+                    <div class="filter-group">
+                        <h3>Configurations</h3>
+                        <label><input type="checkbox" checked> Corner Lounges</label><br>
+                        <label><input type="checkbox"> L Shaped Lounges</label><br>
+                        <label><input type="checkbox"> U Shaped Lounges</label><br>
+                        <label><input type="checkbox"> Chesterfield</label><br>
+                        <label><input type="checkbox"> Recliners</label><br>
+                        <label><input type="checkbox"> Chaise Lounge</label><br>
+                        <label><input type="checkbox"> Modular Sofas</label><br>
+                        <label><input type="checkbox"> Sofa Beds</label>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Price</h3>
+                        <input type="range" min="1500" max="5000" value="2399" class="slider">
+                        <div class="range-labels"><span>MIN</span><span>MAX</span></div>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Seating Capacity</h3>
+                        <input type="range" min="3" max="7" value="5" class="slider">
+                        <div class="range-labels"><span>3</span><span>7</span></div>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Color</h3>
+                        <label><input type="radio" name="color" checked> <span class="color-swatch all"></span> All Colors</label><br>
+                        <label><input type="radio" name="color"> <span class="color-swatch brown"></span> Brown</label><br>
+                        <label><input type="radio" name="color"> <span class="color-swatch black"></span> Black</label><br>
+                        <label><input type="radio" name="color"> <span class="color-swatch darkgray"></span> Dark Gray</label><br>
+                        <label><input type="radio" name="color"> <span class="color-swatch lightgray"></span> Light Gray</label><br>
+                        <label><input type="radio" name="color"> <span class="color-swatch lightbrown"></span> Light Brown</label><br>
+                        <label><input type="radio" name="color"> <span class="color-swatch darkblue"></span> Dark Blue</label>
+                    </div>
+                </form>
+            </aside>
+            <section class="products-section">
+                <h2 class="section-title">Corner Lounge Collection</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="stonnington.png" alt="Stonnington Modular Sofa">
+                        <div class="overlay">
+                            <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
+                        </div>
+                        <div class="product-info">
+                            <h3>Stonnington Modular Sofa</h3>
+                            
+                            <p class="old-price">$6000</p>
+                            <p class="price">$2399</p>
+
+                            <span class="badge best-value">Best Value</span>
+                            <span class="badge in-stock">In Stock</span>
+                            <span class="badge new">New</span>
+                        
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="stonnington.png" alt="Stonnington Modular Sofa">
+                        <div class="overlay">
+                            <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
+                        </div>
+                        <div class="product-info">
+                            <h3>Stonnington Modular Sofa</h3>
+                            
+                            <p class="old-price">$6000</p>
+                            <p class="price">$2399</p>
+
+                            <span class="badge best-value">Best Value</span>
+                            <span class="badge in-stock">In Stock</span>
+                            <span class="badge new">New</span>
+                        
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="stonnington.png" alt="Stonnington Modular Sofa">
+                        <div class="overlay">
+                            <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
+                        </div>
+                        <div class="product-info">
+                            <h3>Stonnington Modular Sofa</h3>
+                            
+                            <p class="old-price">$6000</p>
+                            <p class="price">$2399</p>
+
+                            <span class="badge best-value">Best Value</span>
+                            <span class="badge in-stock">In Stock</span>
+                            <span class="badge new">New</span>
+                        
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="stonnington.png" alt="Stonnington Modular Sofa">
+                        <div class="overlay">
+                            <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
+                        </div>
+                        <div class="product-info">
+                            <h3>Stonnington Modular Sofa</h3>
+                            
+                            <p class="old-price">$6000</p>
+                            <p class="price">$2399</p>
+
+                            <span class="badge best-value">Best Value</span>
+                            <span class="badge in-stock">In Stock</span>
+                            <span class="badge new">New</span>
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <h2 class="section-title">Corner Lounge Collection</h2>
-        <section class="product-list">
-            <div class="product-card">
-                <img src="stonnington.png" alt="Stonnington Modular Sofa">
-                <div class="overlay">
-                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
-                </div>
-                <div class="product-info">
-                    <h3>Stonnington Modular Sofa</h3>
-                    
-                    <p class="old-price">$6000</p>
-                    <p class="price">$2399</p>
-
-                    <span class="badge best-value">Best Value</span>
-                    <span class="badge in-stock">In Stock</span>
-                    <span class="badge new">New</span>
-                
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="stonnington.png" alt="Stonnington Modular Sofa">
-                <div class="overlay">
-                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
-                </div>
-                <div class="product-info">
-                    <h3>Stonnington Modular Sofa</h3>
-                    
-                    <p class="old-price">$6000</p>
-                    <p class="price">$2399</p>
-
-                    <span class="badge best-value">Best Value</span>
-                    <span class="badge in-stock">In Stock</span>
-                    <span class="badge new">New</span>
-                
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="stonnington.png" alt="Stonnington Modular Sofa">
-                <div class="overlay">
-                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
-                </div>
-                <div class="product-info">
-                    <h3>Stonnington Modular Sofa</h3>
-                    
-                    <p class="old-price">$6000</p>
-                    <p class="price">$2399</p>
-
-                    <span class="badge best-value">Best Value</span>
-                    <span class="badge in-stock">In Stock</span>
-                    <span class="badge new">New</span>
-                
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="stonnington.png" alt="Stonnington Modular Sofa">
-                <div class="overlay">
-                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
-                </div>
-                <div class="product-info">
-                    <h3>Stonnington Modular Sofa</h3>
-                    
-                    <p class="old-price">$6000</p>
-                    <p class="price">$2399</p>
-
-                    <span class="badge best-value">Best Value</span>
-                    <span class="badge in-stock">In Stock</span>
-                    <span class="badge new">New</span>
-                
-                </div>
-            </div>
-        </section>
     </main>
 
     <script>
@@ -140,6 +181,38 @@
             if (window.innerWidth > 390) {
                 document.querySelector('.nav-links').classList.remove('show');
             }
+        });
+
+        // Mobile filter sidebar toggle
+        const openFilter = document.getElementById('openFilter');
+        const sidebar = document.getElementById('sidebar');
+        const filterOverlay = document.getElementById('filterOverlay');
+        const closeSidebar = document.getElementById('closeSidebar');
+        function isMobile() { return window.innerWidth <= 390; }
+        function showSidebar() {
+            if (isMobile()) {
+                sidebar.classList.add('active');
+                filterOverlay.classList.add('active');
+                closeSidebar.style.display = 'block';
+            }
+        }
+        function hideSidebar() {
+            sidebar.classList.remove('active');
+            filterOverlay.classList.remove('active');
+            closeSidebar.style.display = 'none';
+        }
+        openFilter.addEventListener('click', function(e) {
+            e.preventDefault();
+            showSidebar();
+        });
+        closeSidebar.addEventListener('click', function() {
+            hideSidebar();
+        });
+        filterOverlay.addEventListener('click', function() {
+            hideSidebar();
+        });
+        window.addEventListener('resize', function() {
+            if (!isMobile()) hideSidebar();
         });
     </script>
 

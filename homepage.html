@@ -145,7 +145,7 @@
                  </div>
                  <div class="offer-card">
                     <h3>75 years Experience</h3>
-                    <p>When you choose our products, you’re choosing the 75 years of expertise influencing every decision.</p>
+                    <p>When you choose our products, you're choosing the 75 years of expertise influencing every decision.</p>
                  </div>
                </div>
         </section>
@@ -294,6 +294,57 @@
             if (window.innerWidth > 390) {
                 document.querySelector('.nav-links').classList.remove('show');
             }
+        });
+
+        // Auto-horizontal scroll for product grid on iPhone 12 Pro
+        function isIPhone12Pro() {
+            return window.innerWidth <= 390;
+        }
+        function autoScrollProductGrid() {
+            if (!isIPhone12Pro()) return;
+            const grid = document.querySelector('.product-grid');
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.product-card'));
+            if (cards.length === 0) return;
+            let currentIndex = 0;
+            function scrollToCard(idx) {
+                const card = cards[idx];
+                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                const gridCenter = grid.clientWidth / 2;
+                const scrollLeft = cardCenter - gridCenter;
+                grid.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            }
+            scrollToCard(currentIndex);
+            setInterval(() => {
+                if (!isIPhone12Pro()) return;
+                currentIndex = (currentIndex + 1) % cards.length;
+                scrollToCard(currentIndex);
+            }, 4000);
+        }
+        function autoScrollMegaContainer() {
+            if (!isIPhone12Pro()) return;
+            const mega = document.querySelector('.mega-container');
+            if (!mega) return;
+            const cards = Array.from(mega.querySelectorAll('.product-card'));
+            if (cards.length === 0) return;
+            let currentIndex = 0;
+            function scrollToCard(idx) {
+                const card = cards[idx];
+                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                const megaCenter = mega.clientWidth / 2;
+                const scrollLeft = cardCenter - megaCenter;
+                mega.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            }
+            scrollToCard(currentIndex);
+            setInterval(() => {
+                if (!isIPhone12Pro()) return;
+                currentIndex = (currentIndex + 1) % cards.length;
+                scrollToCard(currentIndex);
+            }, 4000);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            autoScrollProductGrid();
+            autoScrollMegaContainer();
         });
     </script>
 </body>
