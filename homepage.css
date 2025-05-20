@@ -205,7 +205,7 @@ html, body{
 
 .product-card h3 {
     font-family: Alexandria;
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: 1.2rem;
     font-weight: inherit;
     margin:0;
@@ -217,11 +217,12 @@ html, body{
     font-weight:inherit;
     padding-left: 1rem;
     margin:0;
+    text-decoration: line-through;
 }
 
 .price {
     font-family: Alexandria;
-    padding: 0 1rem 1rem;
+    padding: 0 1rem 0.5rem;
     font-weight:inherit;
     color:#DF0000;
     font-size:x-large;
@@ -265,6 +266,7 @@ html, body{
     border-radius: 5px;
     border: none;
     width:auto;
+    margin-bottom: 1vw;
 }
 
 /* end of product cards*/
@@ -779,14 +781,15 @@ footer {
         display: block;
     }
 
-    .product-card .overlay {
+    .overlay {
+        display: flex;
+        justify-content: center;
         padding: 1rem 0vw 0.4rem 0vw;
         position: absolute;
         top: 0;
         left: 0;
         width:  100%;
         height: 38vw;
-        border-radius: 4vw;
         opacity: 0;
         transition: opacity 0.5s ease;
         pointer-events: none;
@@ -798,8 +801,8 @@ footer {
     }
 
     .overlay img {
-        width: 100%;
-        height: 38vw;
+        width: 92%;
+        height: 150px;
         border-radius: 4vw;
         object-fit: cover;
         display: block;
@@ -807,10 +810,10 @@ footer {
 
     .product-card h3 {
         font-size: 5vw;
-        margin: 0.5rem 0 0.5rem 0;
+        margin: 0.5rem 0 0 0;
         font-family: Alexandria;
         font-weight: initial;
-        padding-left: 0.5rem;
+        padding-left: 1rem;
         white-space: normal;
     }
 
@@ -829,7 +832,7 @@ footer {
         color: #DF0000;
         font-family: Alexandria;
         font-weight: 600;
-        margin: 0 0 0.5rem 0;
+        margin: 0rem;
         white-space: normal;
     }
 
@@ -865,7 +868,7 @@ footer {
     .mega-clearance {
         justify-items: center;
         margin-bottom: 0rem;
-        padding:2rem 0%;
+        padding:1rem 0%;
     }
 
     .mega-clearance h2 {
@@ -879,13 +882,22 @@ footer {
         border-radius: 4vw;
     }
 
+    .mega-container .product-card .overlay {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mega-container .product-card .overlay img {
+        width: 93%;
+    }
+
     .mega-container .product-card:nth-child(n+4) {
         display: none;
     }
 
     .mega-container .product-card img {
         width: 100%;
-        height: 200px;
+        height: 150px;
         object-fit: cover;
     }
 
