@@ -191,6 +191,8 @@ html, body{
 }
 
 .overlay {
+    display: flex;
+    justify-content: center;
     position:absolute;
     top: 0;
     bottom: 0;
@@ -598,13 +600,64 @@ footer {
 
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 2rem;
         padding: 2rem 2%;
     }
 
     .mega-container {
         grid-template-columns: repeat(3, 1fr);
         padding: 0rem 2%;
+    }
+
+    .product-card {
+        padding: 1rem 1.5vw 0.2rem 1.5vw;
+    }
+
+    .product-card img {
+        height: 55%;
+    }
+
+    .product-card h3 {
+        padding-top: 0;
+    }
+
+    .overlay {
+        height: 55%;
+    }
+
+    .overlay img {
+        padding-top: 1.5vw;
+        width: 92%;
+        height: 85%;
+        border-radius: 2.5rem 2.5rem 2rem 2rem;
+        object-fit: cover;
+        display: block;
+    }
+
+    .initial  {
+        margin-top: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .price {
+        padding-left:1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .stock-badge {
+        margin-bottom: 1.2vw;
+        padding: 0.7vw 1vw 0.7vw 1vw;
+        border-radius: 5vw;
+    }
+
+    .value-badge {
+        margin-bottom: 0.5vw;
+        padding: 0.4vw 1vw 0.4vw 1vw;
+        border-radius: 5vw;
+    }
+
+    .new-badge {
+        padding: 0.4vw 1vw 0.4vw 1vw;
     }
 
     .review-card {
@@ -782,8 +835,6 @@ footer {
     }
 
     .overlay {
-        display: flex;
-        justify-content: center;
         padding: 1rem 0vw 0.4rem 0vw;
         position: absolute;
         top: 0;
@@ -913,7 +964,7 @@ footer {
 
     .mega-container .product-card .price {
         white-space: normal;
-        font-size: 5vw;
+        font-size: x-large;
     }
 
     .mega-container .product-card .new-badge,
