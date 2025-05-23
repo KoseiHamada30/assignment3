@@ -1,0 +1,232 @@
+.alexandria {
+    font-family: "Alexandria", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style:normal;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #F7F4F2;
+}
+
+/*navigation*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color:#F7F4F2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: Alexandria;
+    font-style:normal;
+}
+
+.logo img {
+    height: 5vw;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #1F1F1F;
+    font-weight:normal;
+    font-size: 1.9vw;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #BD3E43;
+}
+
+.nav-link::after {
+    display: none;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+.icon-link {
+    color: #1F1F1F;
+    font-size: 1.8vw;
+    transition: all 0.3s ease;
+    font-style: solid;
+}
+
+.icon-link:hover {
+    color: #BD3E43;
+}
+
+/*end of navigation*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 1368px) {
+    /* Surface Pro 7 Landscape */
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-link {
+        font-size: 1.6vw;
+        color: #1F1F1F;
+        transition: all 0.3s ease;
+    }
+
+    .nav-icons a{
+        font-size: 1.2vw;
+    }
+
+    .icon-link {
+        font-size: 1.5vw;
+        color: #1F1F1F;
+        transition: all 0.3s ease;
+    }
+
+    .icon-link:hover {
+        color: #BD3E43;
+    }
+}
+
+
+@media screen and (max-width: 390px) {
+    /* iPhone 12 Pro Portrait */
+    .navbar {
+        padding: 6vw 4%;
+        position: relative;
+        align-items: center;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo img {
+        height: 7vw;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        left: 1rem;
+        font-size: 6vw;
+        z-index: 2;
+    }
+
+    .nav-icons {
+        position: absolute;
+        right: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-icons a{
+        font-size: 2vw;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 4.5vw;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+        color: #1F1F1F;
+    }
+
+    .nav-link:hover {
+        color: #BD3E43;
+        transform: none;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* Add mobile menu styles */
+@media screen and (max-width: 390px) {
+    .menu-toggle {
+        display: block;
+        float: left;
+        background: none;
+        border: none;
+        font-size: 6vw;
+        color: #1F1F1F;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #F7F4F2;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        float:left;
+        gap: 1.8rem;
+        width: 91.9%;
+        border-radius: 0 15% 0 0;
+        padding: 1.5rem 1rem;
+    }
+
+    .nav-link {
+        font-size: 4.5vw;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+        color: #1F1F1F;
+    }
+
+    .nav-link:hover {
+        color: #BD3E43;
+        transform: none;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .show-more {
+        margin-left: 7.5rem;
+    }
+}
