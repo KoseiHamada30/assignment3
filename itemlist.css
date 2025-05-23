@@ -533,6 +533,78 @@ html, body {
 
 .badge.new { background: #919191; }
 
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 5% 2rem;
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size:7.5vw;
+    font-weight: inherit;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column h3 {
+    margin-bottom: 0rem;
+    font-family: Alexandria;
+    font-weight: inherit;
+    font-size: 2.5vw;
+}
+
+.footer-column a {
+    font-family: Alexandria;
+    font-weight: inherit;
+    font-size: 1.5vw;
+    display: block;
+    color:#767676;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-column p {
+    font-family: Alexandria;
+    color:#6e6e6e;
+    font-weight:initial;
+    font-size: 1.5vw;
+    margin: 0vw;
+}
+
+/*end of footer*/
+
 
 /* Surface Pro 7 Landscape */
 @media screen and (max-width: 1368px) {
@@ -631,6 +703,10 @@ html, body {
 
     .badge.in-stock {
         margin-bottom: 1.2vw;
+    }
+
+    .show-more {
+        margin-left: 22.5rem;
     }
 }
 
@@ -811,5 +887,85 @@ html, body {
     }
     .filter-overlay.active {
         display: block;
+    }
+    
+    footer {
+        padding: 0.5rem 2%;
+    }
+
+    .footer-logo h2 {
+        font-size: 10vw;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links a {
+        font-size: 3vw;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 2rem;
+        overflow: hidden;
+    }
+
+    .footer-column {
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .footer-column h3 {
+        font-size: 5vw;
+        cursor: pointer;
+        position: relative;
+        padding-right: 2rem;
+        padding-left: 1rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+
+    .footer-column h3::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-column h3.active::after {
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .footer-column a,
+    .footer-column p {
+        display: none;
+        font-size: 4vw;
+        margin: 0.5rem 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+        padding-left: 1rem;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .footer-column.active a,
+    .footer-column.active p {
+        display: block;
+        opacity: 1;
+        max-height: 1000px;
+        margin-top: 1rem;
+    }
+
+    footer {
+        transition: all 0.3s ease;
+    }
+
+    footer.expanded {
+        padding-bottom: 4rem;
     }
 }

@@ -224,8 +224,8 @@ html, body{
 
 .price {
     font-family: Alexandria;
-    padding: 0 1rem 0.5rem;
-    font-weight:inherit;
+    padding: 0 0.5rem;
+    font-weight: 600;
     color:#DF0000;
     font-size:x-large;
     margin:0;
@@ -639,11 +639,6 @@ footer {
         padding-left: 0.5rem;
     }
 
-    .price {
-        padding-left:1rem;
-        padding-bottom: 0.5rem;
-    }
-
     .stock-badge {
         margin-bottom: 1.2vw;
         padding: 0.7vw 1vw 0.7vw 1vw;
@@ -882,9 +877,10 @@ footer {
         font-size: 6vw;
         color: #DF0000;
         font-family: Alexandria;
-        font-weight: 600;
         margin: 0rem;
         white-space: normal;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     .new-badge, .value-badge, .stock-badge {
