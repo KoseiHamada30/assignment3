@@ -181,21 +181,66 @@ footer {
     gap: 0.5rem;
 }
 .product-image-carousel {
-    margin: 1.5rem 0 1.5rem 0;
-    text-align: center;
     position: relative;
+    text-align: center;
+    margin: 1.5rem 0 1.5rem 0;
 }
-.product-image-carousel .main-image {
+.carousel-images {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 1px;
+}
+.carousel-img {
+    display: none;
     width: 100%;
     max-width: 420px;
     border-radius: 1.5rem;
     box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.07);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+.carousel-img.active {
+    display: block;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+}
+.carousel-arrow {
+    position: absolute;
+    opacity: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    color:#1F1F1F;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.carousel-arrow.left { left: 0.5rem; }
+.carousel-arrow.right { right: 0.5rem; }
+.carousel-arrow:hover, .carousel-arrow:focus {
+    background:#bdbbb7;
+    color: #fff;
 }
 .carousel-dots {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 0.7rem;
+    z-index: 4;
+    position: relative;
 }
 .dot {
     width: 10px;
@@ -204,16 +249,17 @@ footer {
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
+    transition: background 0.2s;
 }
 .dot.active {
-    background: #BD3E43;
+    background: #bdbbb7;
 }
 .product-price-row {
     font-family: Alexandria;
     font-weight: initial;
     display: flex;
     align-items: baseline;
-    gap: 1rem;
+    gap: 1.2rem;
     margin: 1rem 0 1.5rem 0;
 }
 .old-price {
@@ -230,13 +276,13 @@ footer {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 .option-group {
     font-family: Alexandria;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 1rem;
 }
 .seater-options, .material-options, .color-options {
     display: flex;
@@ -245,14 +291,18 @@ footer {
 }
 .seater-btn, .material-btn {
     background: #f7f4f2;
-    border: 1.5px solid #bdbbb7;
+    border: 1px solid #bdbbb7;
     border-radius: 1rem;
     padding: 0.3rem 1.2rem;
     font-family: Alexandria;
     font-size: 1rem;
     cursor: pointer;
     color: #1F1F1F;
-    transition: background 0.2s, color 0.2s, transform 0.18s, box-shadow 0.18s;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.seater-btn.active:hover, .seater-btn:hover, .seater-btn:focus {
+    background: #D6D3CE;
+    border: 3px solid #ADADAD;
 }
 .seater-btn .seater-img {
     width: 40px;
@@ -262,9 +312,39 @@ footer {
     margin: 0 auto;
 }
 .seater-btn.active, .material-btn.active {
-    background: #BD3E43;
+    background:#F7F4F2;
+    border: 1px solid #ADADAD;
+}
+
+.material-btn.active {
+    background:#F7F4F2;
+    border: 0 #F7F4F2;
+}
+.material-btn.active {
+    padding: 0;
+}
+.material-select-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1em;
+    height: 2.1em;
+    margin-right: 0.5em;
+    background:#F7F4F2;
+    border: 1.5px solid #ADADAD;
+    border-radius: 50%;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, border 0.18s;
+}
+.material-select-btn:hover, .material-select-btn:focus {
+    background: #1F1F1F;
     color: #fff;
-    border: 1.5px solid #BD3E43;
+    outline: none;
+}
+.material-select-btn i {
+    font-size: 1em;
+    pointer-events: none;
 }
 .color-swatch {
     display: inline-block;
@@ -275,7 +355,7 @@ footer {
     cursor: pointer;
 }
 .color-swatch.selected {
-    border: 2.5px solid #BD3E43;
+    border: 2.5px solid #ADADAD;
 }
 .product-qty-cart {
     display: flex;
@@ -299,7 +379,7 @@ footer {
     text-align: center;
 }
 .add-to-cart {
-    background: #BD3E43;
+    background: #1F1F1F;
     color: #fff;
     border: none;
     border-radius: 1.2rem;
@@ -551,7 +631,7 @@ footer {
 
     .product-hero, .accordion, .style-guide, .customers-also-bought, .reviews, .recently-viewed {
         max-width: 900px;
-        margin: 1.5rem auto;
+        margin: 2rem auto;
         padding: 1.5rem 2vw;
     }
 
@@ -761,11 +841,10 @@ footer {
         border-radius: 4vw;
     }
     .carousel-dots .dot {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
     }
     .product-price-row {
-        gap: 2.5vw;
         margin-left: 1rem;
     }
     .old-price {
@@ -776,7 +855,7 @@ footer {
     }
     .product-options {
         flex-direction: column;
-        gap: 6vw;
+        gap: 4vw;
         margin-left: 1rem;
     }
     .option-group label {
@@ -793,12 +872,19 @@ footer {
         max-width: 48px;
         max-height: 48px;
     }
+    .material-select-btn {
+        width: 5vw;
+        height: 5vw;
+        font-size: 4vw;
+        margin-right: 2vw;
+    }
     .color-swatch {
-        width: 6vw;
-        height: 6vw;
+        width: 4vw;
+        height: 4vw;
         border-radius: 3vw;
     }
     .product-qty-cart {
+        margin: 0 2.5rem;
         gap: 2vw;
     }
     .qty-btn {
@@ -808,10 +894,11 @@ footer {
     }
     .qty {
         font-size: 5vw;
+        font-family: Alexandria;
     }
     .add-to-cart {
-        font-size: 4vw;
-        padding: 1vw 6vw;
+        font-size: 4.1vw;
+        padding: 2vw 14vw;
         border-radius: 4vw;
     }
     .accordion-header {
@@ -871,6 +958,7 @@ footer {
         flex-direction: row;
         align-items: center;
         gap: 5vw;
+        margin-bottom: 0.5rem;
     }
     .option-group.seater-group label {
         font-family: Alexandria;
@@ -886,7 +974,7 @@ footer {
         display: flex;
         flex-direction: row;
         gap: 6vw;
-        margin-left: 1rem;
+        margin: 0 0rem 1.3rem 1rem;
         width: 90vw;
     }
     .material-color-row .option-group {
@@ -895,8 +983,25 @@ footer {
     }
     .material-color-row label {
         font-size: 4vw;
+        margin-left: 7vw;
     }
+    
     .material-options, .color-options {
         gap: 2vw;
+    }
+    .material-options {
+        margin-left: 5vw;
+    }
+    .color-options {
+        margin-left: 10vw;
+    }
+    .carousel-images, .carousel-img {
+        max-width: 90vw;
+        border-radius: 4vw;
+    }
+    .carousel-arrow {
+        width: 8vw;
+        height: 8vw;
+        font-size: 6vw;
     }
 }

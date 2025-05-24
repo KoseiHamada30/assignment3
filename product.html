@@ -44,9 +44,23 @@
                 </div>
             </div>
             <div class="product-image-carousel">
-                <img src="stonnington.png" alt="Stonnington Sofa" class="main-image" />
+                <button class="carousel-arrow left" aria-label="Previous image">&#10094;</button>
+                <div class="carousel-images">
+                    <img src="stonnington.png" alt="Stonnington Sofa" class="carousel-img active" />
+                    <img src="img2.png" alt="Sofa 2" class="carousel-img" />
+                    <img src="img3.png" alt="Sofa 3" class="carousel-img" />
+                    <img src="img4.png" alt="Sofa 4" class="carousel-img" />
+                    <img src="img5.png" alt="Sofa 5" class="carousel-img" />
+                    <img src="img6.png" alt="Sofa 6" class="carousel-img" />
+                    <img src="img7.png" alt="Sofa 7" class="carousel-img" />
+                </div>
+                <button class="carousel-arrow right" aria-label="Next image">&#10095;</button>
                 <div class="carousel-dots">
                     <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
@@ -57,7 +71,7 @@
             </div>
             <div class="product-options">
                 <div class="option-group seater-group">
-                    <label>Select Seater:</label>
+                    <label>Select Seater</label>
                     <div class="seater-options">
                         <button class="seater-btn active"><img src="Ember-Sofa-Chaise 6.png" alt="Left Seater" class="seater-img"></button>
                         <button class="seater-btn"><img src="Ember-Sofa-Chaise 4.png" alt="Right Seater" class="seater-img"></button>
@@ -67,7 +81,7 @@
                     <div class="option-group">
                         <label>Material</label>
                         <div class="material-options">
-                            <span class="material-btn active">Fabric</span>
+                            <button class="material-select-btn" aria-label="Select Material"></button><span class="material-btn active">Fabric</span>
                         </div>
                     </div>
                     <div class="option-group">
@@ -283,6 +297,34 @@
             if (window.innerWidth > 390) {
                 document.querySelector('.nav-links').classList.remove('show');
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.carousel-img');
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            const leftArrow = document.querySelector('.carousel-arrow.left');
+            const rightArrow = document.querySelector('.carousel-arrow.right');
+            let current = 0;
+
+            function showImage(idx) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === idx);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === idx);
+                });
+                current = idx;
+            }
+
+            leftArrow.addEventListener('click', () => {
+                showImage((current - 1 + images.length) % images.length);
+            });
+            rightArrow.addEventListener('click', () => {
+                showImage((current + 1) % images.length);
+            });
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => showImage(i));
+            });
         });
     </script>
 </body>
