@@ -888,13 +888,14 @@ footer {
     .filter-overlay.active {
         display: block;
     }
-    
+
     footer {
         padding: 0.5rem 2%;
     }
 
     .footer-logo h2 {
-        font-size: 10vw;
+        font-size: 9vw;
+        margin-top: 6vw;
     }
 
     .social-links {
@@ -910,11 +911,13 @@ footer {
         text-align: left;
         gap: 2rem;
         overflow: hidden;
+        margin: 0 1rem;
     }
 
     .footer-column {
         width: 100%;
         transition: all 0.3s ease;
+        border-bottom: 1px solid #919191;
     }
 
     .footer-column h3 {

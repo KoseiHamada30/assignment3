@@ -397,19 +397,19 @@ footer {
 .accordion {
     margin: 2rem auto 1.5rem auto;
     max-width: 700px;
-    background: #fff;
+    background:#F7F4F2;
     border-radius: 1.5rem;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
     padding: 1rem 2vw;
 }
 .accordion-item {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #919191;
 }
 .accordion-header {
+    font-family: Alexandria;
     background: none;
     border: none;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: initial;
     width: 100%;
     text-align: left;
     padding: 1rem 0;
@@ -747,7 +747,8 @@ footer {
     }
 
     .footer-logo h2 {
-        font-size: 10vw;
+        font-size: 9vw;
+        margin-top: 6vw;
     }
 
     .social-links {
@@ -763,11 +764,13 @@ footer {
         text-align: left;
         gap: 2rem;
         overflow: hidden;
+        margin: 0 1rem;
     }
 
     .footer-column {
         width: 100%;
         transition: all 0.3s ease;
+        border-bottom: 1px solid #919191;
     }
 
     .footer-column h3 {
@@ -884,7 +887,7 @@ footer {
         border-radius: 3vw;
     }
     .product-qty-cart {
-        margin: 0 2.5rem;
+        margin: 1rem 2.5rem;
         gap: 2vw;
     }
     .qty-btn {
@@ -1003,5 +1006,8 @@ footer {
         width: 8vw;
         height: 8vw;
         font-size: 6vw;
+    }
+    .accordion-item {
+        margin-bottom: 4vw;
     }
 }
