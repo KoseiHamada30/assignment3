@@ -118,16 +118,15 @@
 
         <!-- STYLE GUIDE CAROUSEL -->
         <section class="style-guide">
-            <h2>Style Guide</h2>
+            <h2 style="text-align: center;">Style Guide</h2>
             <div class="style-carousel">
-                <img src="style1.jpg" alt="Style 1" />
-                <img src="style2.jpg" alt="Style 2" />
-                <img src="style3.jpg" alt="Style 3" />
+                <button class="style-arrow left" aria-label="Previous style">&#10094;</button>
+                <button class="style-arrow right" aria-label="Next style">&#10095;</button>
             </div>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div class="style-dots">
+                <span class="style-dot active"></span>
+                <span class="style-dot"></span>
+                <span class="style-dot"></span>
             </div>
         </section>
 
@@ -326,6 +325,59 @@
             });
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => showImage(i));
+            });
+
+            // Quantity button functionality
+            document.querySelectorAll('.product-qty-cart').forEach(function(cart) {
+                const minusBtn = cart.querySelectorAll('.qty-btn')[0];
+                const plusBtn = cart.querySelectorAll('.qty-btn')[1];
+                const qtySpan = cart.querySelector('.qty');
+                let qty = parseInt(qtySpan.textContent, 10);
+
+                minusBtn.addEventListener('click', function() {
+                    if (qty > 0) {
+                        qty--;
+                        qtySpan.textContent = qty;
+                    }
+                });
+
+                plusBtn.addEventListener('click', function() {
+                    qty++;
+                    qtySpan.textContent = qty;
+                });
+            });
+
+            // Style Guide Slideshow (background-image on section)
+            const styleGuideSection = document.querySelector('.style-guide');
+            const styleDots = document.querySelectorAll('.style-dot');
+            const styleLeft = document.querySelector('.style-arrow.left');
+            const styleRight = document.querySelector('.style-arrow.right');
+            const styleImages = [
+                "style1.png",
+                "style2.jpg",
+                "style3.jpg"
+            ];
+            let styleCurrent = 0;
+
+            function showStyle(idx) {
+                styleGuideSection.style.backgroundImage = `url('${styleImages[idx]}')`;
+                styleDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === idx);
+                });
+                styleCurrent = idx;
+            }
+
+            // Initialize
+            showStyle(styleCurrent);
+
+            styleLeft.addEventListener('click', () => {
+                showStyle((styleCurrent - 1 + styleImages.length) % styleImages.length);
+            });
+            styleRight.addEventListener('click', () => {
+                showStyle((styleCurrent + 1) % styleImages.length);
+            });
+            styleDots.forEach((dot, i) => {
+                dot.addEventListener('click', () => showStyle(i));
             });
         });
     </script>
