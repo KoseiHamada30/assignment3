@@ -972,3 +972,41 @@ footer {
         padding-bottom: 4rem;
     }
 }
+
+.pagination-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 1rem 0;
+}
+.page-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: #eee;
+    color: #1F1F1F;
+    font-family: Alexandria, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.page-num.active {
+    background: #DBD9D7;
+    color: #1F1F1F;
+}
+@media (max-width: 390px) {
+    .pagination-bar {
+        gap: 2vw;
+        margin: 2vw 0 1vw 0;
+    }
+    .page-num {
+        width: 8vw;
+        height: 8vw;
+        font-size: 4vw;
+    }
+}
