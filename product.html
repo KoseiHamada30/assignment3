@@ -131,6 +131,8 @@
         </section>
 
         <!-- CUSTOMERS ALSO BOUGHT -->
+        <h2 style="font-size: 8vw; text-align:center;">Customers Also Bought</h2>
+        
         <section class="product-grid">
             <!--first one is completed-->
             <div class="product-card">
@@ -218,10 +220,13 @@
         <section class="reviews">
             <h2>Reviews</h2>
             <div class="review-summary">
-                <span class="review-score">4.5</span>
-                <span class="review-count">300 reviews</span>
+                <div class="product-rating" style="margin-left: 1.5vw; font-size: 1.5rem;">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-value">4.5</span>
+                </div>
                 <button class="top-review-btn">Top Review</button>
             </div>
+            <span class="review-count">300 reviews</span>
             <div class="review-list">
                 <div class="review-card">
                     <div class="review-header">
@@ -229,7 +234,9 @@
                         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     </div>
                     <div class="review-title">Stonnington Fabric Sofa</div>
-                    <div class="review-body">My lounge suite is delivered this morning. It looks great in our family room. The gray color is exactly what we are after. The fabric is thick, durable, warm, and cozy. Well done The Furniture People. Keep up your good work.</div>
+                    <div class="review-body">My lounge suite is delivered this morning. It looks great in our family room. The gray color is exactly what we are after. 
+                        The fabric is thick, durable, warm, and cozy. 
+                        Well done The Furniture People. Keep up your good work.</div>
                 </div>
                 <div class="review-card">
                     <div class="review-header">
@@ -237,7 +244,7 @@
                         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     </div>
                     <div class="review-title">Fabric Sofa</div>
-                    <div class="review-body">Love this sofa! It's transformed my living room – the fabric is soft but durable, and the chaise is perfect for relaxing after a long day. Assembly was simple, and you can really see the quality in every detail.</div>
+                    <div class="review-body">Love this sofa! It’s transformed my living room — the fabric is soft but durable, and the chaise is perfect for relaxing after a long day. Assembly was simple, and you can really see the quality in every detail.</div>
                 </div>
                 <div class="review-card">
                     <div class="review-header">
@@ -245,7 +252,7 @@
                         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     </div>
                     <div class="review-title">Perfect for Family Living</div>
-                    <div class="review-body">We needed a spacious and comfortable sofa for our growing family and this one fits the bill. The modular design allows for flexibility, and the cushions provide excellent support. Highly recommend!</div>
+                    <div class="review-body">We needed a spacious and comfortable sofa for our growing family, and this one fits the bill. The modular design allows for flexibility, and the cushions provide excellent support. Highly recommend!​</div>
                 </div>
             </div>
             <div class="review-pagination">
@@ -260,27 +267,45 @@
         </section>
 
         <!-- RECENTLY VIEWED -->
-        <section class="recently-viewed">
-            <h2>Recently Viewed</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="parilla.jpg" alt="Parilla L-Shaped Fabric Lounge Suite" />
-                    <div class="product-info">
-                        <h3>Parilla L-Shaped Fabric Lounge Suite</h3>
-                        <span class="old-price">$1999</span>
-                        <span class="price">$1750</span>
-                        <span class="badge in-stock">in stock</span>
-                    </div>
+        <h2 style="margin-top: 3rem; text-align: center; font-size: 9vw;">Recently Viewed</h2>
+        <section class="product-grid" style="margin-bottom: 2rem;">
+            <div class="product-card">
+                <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                <div class="overlay">
+                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
                 </div>
-                <div class="product-card">
-                    <img src="tullera.jpg" alt="Tullera L-Shaped Fabric Lounge Suite" />
-                    <div class="product-info">
-                        <h3>Tullera L-Shaped Fabric Lounge Suite</h3>
-                        <span class="old-price">$699</span>
-                        <span class="price">$650</span>
-                        <span class="badge in-stock">in stock</span>
-                    </div>
+                <h3>Stonnington Modular Sofa</h3>
+                <p class="initial">$6000</p>
+                <p class="price">$2399</p>
+                <button class="new-badge">New</button>
+                <button class="value-badge">BEST VALUE</button>
+                <button class="stock-badge">IN STOCK</button>
+            </div>
+
+            <div class="product-card">
+                <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                <div class="overlay">
+                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
                 </div>
+                <h3>Stonnington Modular Sofa</h3>
+                <p class="initial">$6000</p>
+                <p class="price">$2399</p>
+                <button class="new-badge">New</button>
+                <button class="value-badge">BEST VALUE</button>
+                <button class="stock-badge">IN STOCK</button>
+            </div>
+
+            <div class="product-card">
+                <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                <div class="overlay">
+                    <img src="hover_stonnington.png" class="hover-img" alt="hover Stonnington Modular Sofa">
+                </div>
+                <h3>Stonnington Modular Sofa</h3>
+                <p class="initial">$6000</p>
+                <p class="price">$2399</p>
+                <button class="new-badge">New</button>
+                <button class="value-badge">BEST VALUE</button>
+                <button class="stock-badge">IN STOCK</button>
             </div>
         </section>
         <!-- PRODUCT PAGE CONTENT END -->
@@ -359,7 +384,6 @@
             }
         });
 
-        
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.carousel-img');
             const dots = document.querySelectorAll('.carousel-dots .dot');
