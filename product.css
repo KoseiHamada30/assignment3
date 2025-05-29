@@ -921,6 +921,25 @@ footer {
         padding: 1.5rem 2vw;
     }
 
+    .style-guide {
+        gap: 11rem;
+    }
+
+    .style-guide h2 {
+        color: #F7F4F2;
+        font-size: 6vw;
+    }
+
+    .style-arrow {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .style-dot {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
     .accordion {
         margin-top: 0;
         margin-bottom: 4rem;
@@ -1334,6 +1353,10 @@ footer {
         margin-top: 3vw;
         margin-bottom: 1rem;
         font-size: 4vw;
+    }
+
+    .style-guide {
+        gap: 0;
     }
 
     .style-guide h2, .customers-also-bought h2, .reviews h2, .recently-viewed h2 {
