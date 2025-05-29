@@ -103,16 +103,34 @@
         <!-- ACCORDION SECTIONS -->
         <section class="accordion">
             <div class="accordion-item">
-                <button class="accordion-header">Product Description</button>
-                <div class="accordion-content">A modular sofa with chaise, perfect for modern living rooms. Durable fabric, easy assembly.</div>
+                <button class="accordion-header">Product Description <span class="accordion-arrow">&#x25BC;</span></button>
+                <div class="accordion-content">
+                    <h3>High Grade Thick Fabric</h3>
+                    <p>Upholstered in extra-plush, high thickness fabric for a lifetime of looking good and feeling cosy, the Stonnington 4 Seater Modular Fabric Sofa with Chaise is perfect for any space.</p>
+                    <p></p>
+                    <p>Whether you're looking to furnish your main living room or just the TV room, this piece will do the trick.</p>
+                    <div class="accordion-images">
+                        <img src="swatch1.png" alt="Fabric Swatch 1">
+                        <img src="swatch2.png" alt="Fabric Swatch 2">
+                        <img src="swatch3.png" alt="Fabric Swatch 3">
+                    </div>
+                </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header">Details and Dimensions</button>
-                <div class="accordion-content">Dimensions: 300x180x90cm. Material: Fabric. Color: Light Grey.</div>
+                <button class="accordion-header">Details and Dimensions <span class="accordion-arrow">&#x25BC;</span></button>
+                <div class="accordion-content" style="padding-top: 0px;">
+                    <p>Dimensions: 300x180x90cm.<br>Material: Fabric.<br>Color: Light Grey.</p>
+                    <div class="accordion-images">
+                        <img src="detail1.png" alt="Detail 1">
+                        <img src="detail2.png" alt="Detail 2">
+                    </div>
+                </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header">FAQ</button>
-                <div class="accordion-content">Q: Is assembly required? A: Yes, simple assembly is required.</div>
+                <button class="accordion-header">FAQ <span class="accordion-arrow">&#x25BC;</span></button>
+                <div class="accordion-content" style="padding-top: 0;">
+                    <p>Q: Is assembly required?<br>A: Yes, simple assembly is required.<br><br>Q: Is the fabric easy to clean?<br>A: Yes, the fabric is designed for easy maintenance.</p>
+                </div>
             </div>
         </section>
 
@@ -230,6 +248,7 @@
             <div class="review-list">
                 <div class="review-card">
                     <div class="review-header">
+                        <i class="fa fa-certificate" aria-hidden="true"></i>
                         <span class="reviewer">Thomas</span>
                         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     </div>
@@ -240,14 +259,16 @@
                 </div>
                 <div class="review-card">
                     <div class="review-header">
+                        <i class="fa fa-certificate" aria-hidden="true"></i>
                         <span class="reviewer">Chris</span>
                         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     </div>
                     <div class="review-title">Fabric Sofa</div>
-                    <div class="review-body">Love this sofa! It’s transformed my living room — the fabric is soft but durable, and the chaise is perfect for relaxing after a long day. Assembly was simple, and you can really see the quality in every detail.</div>
+                    <div class="review-body">Love this sofa! It's transformed my living room — the fabric is soft but durable, and the chaise is perfect for relaxing after a long day. Assembly was simple, and you can really see the quality in every detail.</div>
                 </div>
                 <div class="review-card">
                     <div class="review-header">
+                        <i class="fa fa-certificate" aria-hidden="true"></i>
                         <span class="reviewer">Justin</span>
                         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                     </div>
@@ -462,6 +483,25 @@
             });
             styleDots.forEach((dot, i) => {
                 dot.addEventListener('click', () => showStyle(i));
+            });
+
+            // Accordion toggle code
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const item = this.closest('.accordion-item');
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.accordion-item').forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.accordion-content').style.display = 'none';
+                        i.querySelector('.accordion-arrow').innerHTML = '&#x25BC;';
+                    });
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        item.querySelector('.accordion-content').style.display = 'block';
+                        item.querySelector('.accordion-arrow').innerHTML = '&#x25B2;';
+                    }
+                });
             });
         });
     </script>

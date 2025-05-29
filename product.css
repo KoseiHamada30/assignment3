@@ -216,7 +216,6 @@ footer {
     opacity: 70%;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
     border: none;
     border-radius: 50%;
     width: 2.5rem;
@@ -231,8 +230,7 @@ footer {
 .carousel-arrow.left { left: 0.5rem; }
 .carousel-arrow.right { right: 0.5rem; }
 .carousel-arrow:hover, .carousel-arrow:focus {
-    background:#bdbbb7;
-    color: #fff;
+    color: #B7AC9D;
 }
 .carousel-dots {
     display: flex;
@@ -259,7 +257,7 @@ footer {
     font-weight: initial;
     display: flex;
     align-items: baseline;
-    gap: 1.2rem;
+    gap: 1rem;
     margin: 1rem 0 1.5rem 0;
 }
 .old-price {
@@ -280,6 +278,10 @@ footer {
     gap: 2rem;
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
+}
+.product-options label {
+    text-decoration: underline;
+
 }
 .option-group {
     font-family: Alexandria;
@@ -408,21 +410,63 @@ footer {
     border-bottom: 1px solid #919191;
 }
 .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     font-family: Alexandria;
     background: none;
     border: none;
     font-size: 1.1rem;
     font-weight: initial;
-    width: 100%;
     text-align: left;
     padding: 1rem 0;
     cursor: pointer;
 }
+.accordion-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em;
+    font-size: 1.2em;
+    color: #bdbbb7;
+    transition: color 0.25s;
+}
+.accordion-arrow i {
+    transition: transform 0.25s;
+}
+.accordion-item.open .accordion-arrow {
+    color: #1F1F1F;
+}
+.accordion-item.open .accordion-arrow i {
+    transform: rotate(180deg);
+}
 .accordion-content {
     display: none;
-    padding: 0 0 1rem 0;
-    color: #444;
-    font-size: 1rem;
+    padding: 1rem 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: #222;
+    animation: fadeInAccordion 0.3s;
+}
+.accordion-item.open .accordion-content {
+    display: block;
+}
+.accordion-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.2rem 0 0.5rem 0;
+    flex-wrap: nowrap;
+}
+.accordion-images img {
+    width: 120px;
+    height: 120px;
+    border-radius: 18px;
+    object-fit: cover;
+    background: #eaeaea;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
 }
 .accordion-item.active .accordion-content {
     display: block;
@@ -596,15 +640,6 @@ footer {
     text-decoration: line-through;
 }
 
-.price {
-    font-family: Alexandria;
-    padding: 0 0.5rem;
-    font-weight: 600;
-    color:#DF0000;
-    font-size:x-large;
-    margin:0;
-}
-
 .new-badge {
     font-family: Alexandria;
     font-weight:initial;
@@ -748,6 +783,34 @@ footer {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+.style-slides {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    min-height: 1px;
+    margin: 0 auto;
+}
+.style-slide {
+    display: none;
+    width: 100%;
+    height: 220px;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+.style-slide.active {
+    display: block;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
 }
 
 
@@ -1059,10 +1122,9 @@ footer {
         font-size: 6vw;
     }
     .price {
-        font-size: 6vw;
+        font-size: 8vw;
         color: rgb(223, 0, 0);
         font-family: Alexandria;
-        padding-left: 1rem;
         padding-bottom: 0.5rem;
         margin: 0rem;
         white-space: normal;
@@ -1120,8 +1182,18 @@ footer {
         padding: 2vw 0;
     }
     .accordion-content {
-        font-size: 3.5vw;
+        font-size: 3.7vw;
+        font-family: Alexandria;
     }
+    .accordion-content p {
+        font-family: Alexandria;
+        font-size: 3.2vw;
+        font-weight: 300;
+    }
+    .accordion-content h3 {
+        margin-top: 0;
+    }
+
     .style-guide h2, .customers-also-bought h2, .reviews h2, .recently-viewed h2 {
         font-size: 8vw;
         margin-bottom: 2rem;
@@ -1132,6 +1204,7 @@ footer {
     }
     .style-guide h2 {
         color: #F7F4F2;
+        font-size: 6vw;
     }
     .product-grid {
         margin: 2rem 0rem 0rem 0rem;
@@ -1241,7 +1314,7 @@ footer {
     .review-title {
         font-size: 4vw;
         font-weight: initial;
-        margin-bottom: 2vw;
+        margin-bottom: 5.5vw;
     }
     .review-body {
         font-size: 3.5vw;
@@ -1260,12 +1333,13 @@ footer {
     .option-group.seater-group label {
         font-family: Alexandria;
         margin-bottom: 0;
-        font-size: 5.5vw;
+        font-size: 4vw;
         font-weight:350;
         white-space: nowrap;
     }
     .seater-options {
         gap: 8vw;
+        margin-left: 2rem;
     }
     .material-color-row {
         display: flex;
@@ -1348,39 +1422,39 @@ footer {
     .review-header{
         margin-bottom: 3vw;
     }
-}
 
-.style-slides {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 220px;
-    min-height: 1px;
-    margin: 0 auto;
-}
-.style-slide {
-    display: none;
-    width: 100%;
-    height: 220px;
-    border-radius: 1rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: opacity 0.3s;
-    opacity: 0;
-}
-.style-slide.active {
-    display: block;
-    position: relative;
-    opacity: 1;
-    z-index: 2;
-}
-@media (max-width: 390px) {
+    .review-header .fa {
+        font-size: 22px;
+        color: #3897F0;
+    }
+
+    .accordion {
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 2vw;
+        padding-left: 2vw;
+    }
+
     .style-slides, .style-slide {
         height: 40vw;
         border-radius: 3vw;
+    }
+}
+
+@keyframes fadeInAccordion {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .accordion-images {
+        gap: 3vw;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    .accordion-images img {
+        width: 28vw;
+        height: 28vw;
+        border-radius: 5vw;
     }
 }
