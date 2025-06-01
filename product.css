@@ -580,19 +580,29 @@ footer {
 
 /* Product Grid (Also Bought, Recently Viewed) */
 .product-grid {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
     gap: 2rem;
-    padding: 2rem 5%;
+    padding: 2rem 2%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.product-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .product-card {
+    flex-shrink: 0;
+    width: 300px;
     box-shadow: 2px 3px 10px 10px rgb(173, 173, 173);
     background-color: var(--white);
     border-radius: 30px;
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease;
+    padding: 1rem 1.5vw 0.2rem 1.5vw;
 }
 
 .product-card:hover {
@@ -875,7 +885,12 @@ footer {
     }
 
     .product-rating {
-        font-size: 1.5rem; 
+        font-size: 2.5rem; 
+    }
+
+    .top-review-btn {
+        font-size: 1.5rem;
+        margin-left: 7.7rem;
     }
 
     .product-options label {
@@ -986,17 +1001,26 @@ footer {
     }
 
     .product-grid {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
         gap: 2rem;
         padding: 2rem 2%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .product-grid::-webkit-scrollbar {
+        display: none;
     }
 
     .product-card {
+        flex-shrink: 0;
         padding: 1rem 1.5vw 0.2rem 1.5vw;
     }
 
     .product-card img {
-        height: 55%;
+        height: 60%;
     }
 
     .overlay {
@@ -1006,7 +1030,7 @@ footer {
     .overlay img {
         padding-top: 1.5vw;
         width: 92%;
-        height: 85%;
+        height: 90%;
         border-radius: 2.5rem 2.5rem 2rem 2rem;
         object-fit: cover;
         display: block;
@@ -1017,7 +1041,7 @@ footer {
     }
 
     .initial {
-        margin-top: 0.5rem;
+        margin-top: 2.2rem;
         padding-left: 0.5rem;
     }
 
@@ -1062,6 +1086,54 @@ footer {
 
     .carousel-dots {
         display: none;
+    }
+
+    .reviews {
+        margin-top: 1rem;
+    }
+
+    .reviews h2 {
+        text-align: center;
+        font-size: 7vw;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .review-summary {
+        gap: 18rem;
+        padding: 0 2vw;
+    }
+
+    .review-count {
+        margin-left: 2.7vw;
+        font-size: 3vw;
+    }
+
+    .review-header {
+        margin-bottom: 0.3rem;
+    }
+
+    .review-header .fa {
+        font-size: 3.2vw;
+        color: #3897F0;
+    }
+
+    .review-title {
+        font-size: 2.3vw;
+        font-weight: 400;
+        margin-bottom: 1.2rem;
+    }
+
+    .review-list {
+        margin-top: 3rem;
+    }
+
+    .reviewer {
+        font-size: 2rem;
+    }
+
+    .review-stars {
+        font-size: 1.5rem;
     }
 }
 
@@ -1251,7 +1323,8 @@ footer {
         font-size: 4.5vw;
     }
     .product-rating {
-        font-size: 1rem;
+        margin-left: 1.5vw;
+        font-size: 1.5rem;
     }
     .product-image-carousel .main-image {
         max-width: 90vw;
@@ -1470,6 +1543,11 @@ footer {
         margin-bottom: 0.5vw;
     }
 
+    .review-summary {
+        gap: 0.5rem;
+        padding: 0;
+    }
+
     .review-card {
         padding: 1rem 2vw;
     }
@@ -1572,6 +1650,7 @@ footer {
 
     .top-review-btn {
         margin-left: 5rem;
+        font-size: 0.9rem;
     }
 
     .review-score {
@@ -1582,12 +1661,16 @@ footer {
         margin-left: 2vw;
     }
 
+    .review-list {
+        margin-top: 1.5rem;
+    }
+
     .reviewer {
         font-size: 1.5rem;
     }
 
     .review-header{
-        margin-bottom: 3vw;
+        margin-bottom: 0.3rem;
     }
 
     .review-header .fa {
