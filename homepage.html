@@ -95,6 +95,107 @@
             </div>
         </section>
 
+        <!-- Cart Overlay -->
+        <section class="cart-overlay">
+            <div class="cart-header">
+                <h2>Cart</h2>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-breadcrumb">
+                <span><b>Cart</b></span> &gt; <span>Information</span> &gt; <span>Payment</span>
+            </div>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="item-image-container">
+                        <img src="stonnington.png" alt="Stonnington Modular Sofa">
+                        <div class="item-badges">
+                           <span class="badge top-sale">TOP<br>SALE</span>
+                           <span class="badge discount">60%<br>OFF</span>
+                        </div>
+                        <div class="item-qty">
+                            <button class="qty-minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="qty-plus">+</button>
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <h3>Stonnington Modular Sofa</h3>
+                        <p>Frame: Wood</p>
+                        <p>Material: Fabric</p>
+                        <p>Chaise: Left Arm</p>
+                        <div class ="in-stock-day">
+                            <p>In Stock: 3 ~ 5 days</p>
+                        </div>
+                        <div class="item-price-qty">
+                            <div class="item-price">$ 2399</div>
+                            <button class="remove-item">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- More cart items can be added here -->
+            </div>
+            <div class="maybe-you-like">
+                <h4>Maybe You Like</h4>
+                <div class="like-items">
+                    <div class="like-item">
+                         <img src="ottoman.png" alt="Stonnington Fabric Storage Ottoman">
+                         <div class="like-details-container">
+                             <div class="like-details">
+                                 <h3>Stonnington Fabric Storage Ottoman</h3>
+                                 <div class="price-button-group">
+                                        <div class="prices">
+                                            <p class="initial-price">$700</p>
+                                            <p class="current-price">$ 399</p>
+                                        </div>
+                                        <button class="add-to-cart" style="margin-left: 2.5vw;">Add to Cart</button>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="like-item">
+                         <img src="U-Shaped Modular Fabric Lounge Suite.png" alt="U-Shaped Modular Fabric Lounge Suite">
+                         <div class="like-details-container">
+                             <div class="like-details">
+                                 <h3>U-Shaped Modular Fabric Lounge Suite</h3>
+                                 <div class="price-button-group">
+                                        <div class="prices">
+                                            <p class="initial-price">$4500</p>
+                                            <p class="current-price">$ 2599</p>
+                                        </div>
+                                        <button class="add-to-cart">Add to Cart</button>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                    <!-- More maybe you like items can be added here -->
+                </div>
+            </div>
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$ 6000</span>
+                </div>
+                <div class="summary-row sale-savings">
+                    <span style="color: #DF0000;">Sale Savings</span>
+                    <span>$ 3601</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$ 120</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$ 2519</span>
+                </div>
+                <button class="checkout-button">Checkout</button>
+            </div>
+        </section>
+
         <section class="hero">
             <h1>The Furniture People</h1>
             <h5>Australia's No.1 Online Furniture Warehouse</h5>
@@ -125,8 +226,6 @@
                 <button class="value-badge">BEST VALUE</button>
                 <button class="stock-badge">IN STOCK</button>
             </div>
-
-            <!--first one is completed-->
 
             <div class="product-card">
                 <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
@@ -408,6 +507,39 @@
                     } else {
                         searchOverlay.classList.add('visible');
                         body.classList.add('no-scroll');
+                    }
+                });
+            }
+
+            // Toggle cart overlay
+            const cartIcon = document.querySelector('.nav-icons .icon-link[aria-label="Shopping cart"]');
+            const cartOverlay = document.querySelector('.cart-overlay');
+
+            if (cartIcon && cartOverlay) {
+                cartIcon.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Toggle visibility and scroll lock
+                    if (cartOverlay.classList.contains('visible')) {
+                        cartOverlay.classList.remove('visible');
+                        body.classList.remove('no-scroll');
+                    } else {
+                        cartOverlay.classList.add('visible');
+                        body.classList.add('no-scroll');
+                    }
+                });
+            }
+
+            // Close cart overlay when clicking close button
+            const closeCart = document.querySelector('.close-cart');
+            if (closeCart) {
+                closeCart.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default button behavior
+
+                    // Toggle visibility and scroll lock
+                    if (cartOverlay.classList.contains('visible')) {
+                        cartOverlay.classList.remove('visible');
+                        body.classList.remove('no-scroll');
                     }
                 });
             }
