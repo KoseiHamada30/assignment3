@@ -276,8 +276,13 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('show');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+            body.classList.toggle('no-scroll');
         });
 
         // Close mobile menu when clicking outside
@@ -288,6 +293,7 @@
             
             if (!nav.contains(event.target) && navLinks.classList.contains('show')) {
                 navLinks.classList.remove('show');
+                body.classList.remove('no-scroll');
             }
         });
 
@@ -295,6 +301,7 @@
         window.addEventListener('resize', function() {
             if (window.innerWidth > 390) {
                 document.querySelector('.nav-links').classList.remove('show');
+                body.classList.remove('no-scroll');
             }
         });
 

@@ -397,7 +397,6 @@
         <script src="footer.js"></script>
     </main>
 
-
     <script>
         // Mobile menu toggle
         document.querySelector('.menu-toggle').addEventListener('click', function() {
@@ -425,6 +424,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.carousel-img');
             const dots = document.querySelectorAll('.carousel-dots .dot');
+            const thumbnails = document.querySelectorAll('.carousel-thumbnail');
             const leftArrow = document.querySelector('.carousel-arrow.left');
             const rightArrow = document.querySelector('.carousel-arrow.right');
             let current = 0;
@@ -435,6 +435,9 @@
                 });
                 dots.forEach((dot, i) => {
                     dot.classList.toggle('active', i === idx);
+                });
+                thumbnails.forEach((thumb, i) => {
+                    thumb.classList.toggle('active', i === idx);
                 });
                 current = idx;
             }
@@ -447,6 +450,9 @@
             });
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => showImage(i));
+            });
+            thumbnails.forEach((thumb, i) => {
+                thumb.addEventListener('click', () => showImage(i));
             });
 
             // Quantity button functionality
@@ -523,3 +529,4 @@
         });
     </script>
 </body>
+</html>
