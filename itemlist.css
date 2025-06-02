@@ -751,11 +751,24 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        float: left;
-        gap: 1.8rem;
-        width: 91.9%;
-        border-radius: 0 15% 0 0;
+        gap: 2.5rem;
+        height: calc(100vh - 60px); /* Subtract navbar height */
+        position: fixed;
+        top: 40px; /* Position below navbar */
+        left: 0;
+        background-color: #F7F4F2;
         padding: 1.5rem 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    /* Disable body scrolling when menu is open */
+    body.no-scroll {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
     }
 
     .nav-link {
@@ -964,6 +977,59 @@ footer {
 
     footer.expanded {
         padding-bottom: 4rem;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-submenu {
+        display: none; /* Hide submenu by default */
+        padding-left: 1rem; /* Indent submenu */
+    }
+
+    .nav-dropdown.active .nav-submenu {
+        display: block; /* Show submenu when active */
+    }
+
+    .submenu-section h4 {
+        font-size: 5vw; 
+        font-weight: normal;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        color: #1F1F1F;
+    }
+
+    .submenu-section ul {
+        list-style: none;
+        padding: 0 0 0 4vw;
+        margin: 0;
+    }
+
+    .submenu-section li a {
+        font-size: 3.5vw; /* Adjust size as needed */
+        color: #4F4F4F; /* Adjust color */
+        text-decoration: none; /* Remove default underline */
+        padding: 0.3rem 0; /* Adjust padding */
+        display: block;
+    }
+
+    .submenu-section li a:hover {
+        color: #BD3E43; /* Adjust hover color */
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .nav-dropdown.active .dropdown-arrow {
+        transform: rotate(180deg); /* Rotate arrow when active */
     }
 }
 

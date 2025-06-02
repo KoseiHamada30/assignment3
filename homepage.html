@@ -21,7 +21,32 @@
         <div class="nav-links">
             <a href="#" class="nav-link">New Arrival</a>
             <a href="#" class="nav-link">Clearance</a>
-            <a href="seating.html" class="nav-link">Seating</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link">Seating</a>
+                <div class="nav-submenu">
+                    <div class="submenu-section">
+                        <h4>Configuration</h4>
+                        <ul>
+                            <li><a href="itemlist.html">Corner Lounges</a></li>
+                            <li><a href="#">Chaise Lounge</a></li>
+                            <li><a href="#">L Shaped Lounges</a></li>
+                            <li><a href="#">Modular sofas</a></li>
+                            <li><a href="#">Recliners</a></li>
+                            <li><a href="#">Sofa Beds</a></li>
+                        </ul>
+                    </div>
+                    <div class="submenu-section">
+                        <h4>Seats</h4>
+                        <ul>
+                            <li><a href="#">2 Seaters</a></li>
+                            <li><a href="#">3 Seaters</a></li>
+                            <li><a href="#">4 Seater Couches and Sofas</a></li>
+                            <li><a href="#">Armchairs / Accent Chair</a></li>
+                            <li><a href="#">Ottomans & Accent Bench</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <a href="#" class="nav-link">Living</a>
             <a href="#" class="nav-link">Dining</a>
             <a href="#" class="nav-link">Bedroom</a>
@@ -275,85 +300,62 @@
     </main>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const body = document.body;
-
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('show');
-            body.classList.toggle('no-scroll');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('.navbar');
-            const navLinks = document.querySelector('.nav-links');
-            const menuToggle = document.querySelector('.menu-toggle');
-            
-            if (!nav.contains(event.target) && navLinks.classList.contains('show')) {
-                navLinks.classList.remove('show');
-                body.classList.remove('no-scroll');
-            }
-        });
-
-        // Close mobile menu when window is resized above mobile breakpoint
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 390) {
-                document.querySelector('.nav-links').classList.remove('show');
-                body.classList.remove('no-scroll');
-            }
-        });
-
-        // Auto-horizontal scroll for product grid on iPhone 12 Pro
-        function isIPhone12Pro() {
-            return window.innerWidth <= 390;
-        }
-        function autoScrollProductGrid() {
-            if (!isIPhone12Pro()) return;
-            const grid = document.querySelector('.product-grid');
-            if (!grid) return;
-            const cards = Array.from(grid.querySelectorAll('.product-card'));
-            if (cards.length === 0) return;
-            let currentIndex = 0;
-            function scrollToCard(idx) {
-                const card = cards[idx];
-                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-                const gridCenter = grid.clientWidth / 2;
-                const scrollLeft = cardCenter - gridCenter;
-                grid.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-            }
-            scrollToCard(currentIndex);
-            setInterval(() => {
-                if (!isIPhone12Pro()) return;
-                currentIndex = (currentIndex + 1) % cards.length;
-                scrollToCard(currentIndex);
-            }, 1000000);
-        }
-        function autoScrollMegaContainer() {
-            if (!isIPhone12Pro()) return;
-            const mega = document.querySelector('.mega-container');
-            if (!mega) return;
-            const cards = Array.from(mega.querySelectorAll('.product-card'));
-            if (cards.length === 0) return;
-            let currentIndex = 0;
-            function scrollToCard(idx) {
-                const card = cards[idx];
-                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-                const megaCenter = mega.clientWidth / 2;
-                const scrollLeft = cardCenter - megaCenter;
-                mega.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-            }
-            scrollToCard(currentIndex);
-            setInterval(() => {
-                if (!isIPhone12Pro()) return;
-                currentIndex = (currentIndex + 1) % cards.length;
-                scrollToCard(currentIndex);
-            }, 10000);
-        }
         document.addEventListener('DOMContentLoaded', function() {
-            autoScrollProductGrid();
-            autoScrollMegaContainer();
+            const images = document.querySelectorAll('.carousel-img');
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            const thumbnails = document.querySelectorAll('.carousel-thumbnail');
+            const leftArrow = document.querySelector('.carousel-arrow.left');
+            const rightArrow = document.querySelector('.carousel-arrow.right');
+            let current = 0;
+
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+                body.classList.toggle('no-scroll');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const nav = document.querySelector('.navbar');
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.menu-toggle');
+
+                if (!nav.contains(event.target) && navLinks.classList.contains('show')) {
+                    navLinks.classList.remove('show');
+                    body.classList.remove('no-scroll');
+                }
+            });
+
+            // Close mobile menu when window is resized above mobile breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 390) {
+                    document.querySelector('.nav-links').classList.remove('show');
+                    body.classList.remove('no-scroll');
+                }
+            });
+
+            // Toggle seating submenu
+            const seatingDropdown = document.querySelector('.nav-dropdown');
+            if (seatingDropdown) {
+                seatingDropdown.querySelector('.nav-link').addEventListener('click', function(event) {
+                    // Prevent default link behavior if it has a '#' href
+                    if (this.getAttribute('href') === '#') {
+                         event.preventDefault();
+                    }
+                    seatingDropdown.classList.toggle('active');
+
+                    // Optional: Close other open dropdowns if any
+                    document.querySelectorAll('.nav-dropdown.active').forEach(dropdown => {
+                        if (dropdown !== seatingDropdown) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>
