@@ -60,6 +60,42 @@
     </nav>
 
     <main>
+ <!-- Search Overlay -->
+ <section class="search-overlay">
+    <div class="search-header">
+        
+        <div class="search-input-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Sofa">
+        </div>
+    </div>
+    <div class="search-categories">
+        <div class="category-list">
+            <span><b>Sofa</b>s</span>
+            <span><b>Sofa</b> Bed</span>
+            <span>Modular <b>Sofa</b></span>
+            <span>Outdoor <b>Sofa</b></span>
+        </div>
+    </div>
+    <div class="search-results">
+        <div class="product-grid search-product-grid">
+            <div class="product-card">
+                 <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                 <h3>Stonnington Modular Sofa <div class="rightarrow">&rarr;</div></h3>
+            </div>
+             <div class="product-card">
+                 <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                 <h3>Stonnington Modular Sofa <div class="rightarrow">&rarr;</div></h3>
+            </div>
+             <div class="product-card">
+                 <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                 <h3>Stonnington Modular Sofa <div class="rightarrow">&rarr;</div></h3>
+            </div>
+            <button class="show-more">All Results &rarr; </button>
+        </div>
+    </div>
+</section>
+
         <section class="hero">
             <div class="hero-content">
                 <h1>Lounge Suites Collection</h1>
@@ -316,6 +352,25 @@
                             dropdown.classList.remove('active');
                         }
                     });
+                });
+            }
+
+        // Toggle search overlay
+        const searchIcon = document.querySelector('.nav-icons .icon-link[aria-label="Search"]');
+            const searchOverlay = document.querySelector('.search-overlay');
+
+            if (searchIcon && searchOverlay) {
+                searchIcon.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Toggle visibility and scroll lock
+                    if (searchOverlay.classList.contains('visible')) {
+                        searchOverlay.classList.remove('visible');
+                        body.classList.remove('no-scroll');
+                    } else {
+                        searchOverlay.classList.add('visible');
+                        body.classList.add('no-scroll');
+                    }
                 });
             }
 
