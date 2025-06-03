@@ -131,6 +131,42 @@
             </div>
         </section>
 
+        <!-- Search Overlay for Laptop -->
+        <div class="search-overlay-laptop" id="searchOverlayLaptop">
+          <div class="search-header-laptop">
+            <button class="close-search-laptop" id="closeSearchLaptop">&times;</button>
+            <div class="search-input-container-laptop">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Sofa">
+            </div>
+          </div>
+          <div class="search-categories-laptop">
+            <div class="category-list-laptop">
+              <span><b>Sofa</b>s</span>
+              <span><b>Sofa</b> Bed</span>
+              <span>Modular <b>Sofa</b></span>
+              <span>Outdoor <b>Sofa</b></span>
+            </div>
+          </div>
+          <div class="search-results-laptop">
+            <div class="product-grid-laptop">
+              <div class="product-card-laptop">
+                <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                <h3>Stonnington Modular Sofa <span class="rightarrow">&rarr;</span></h3>
+              </div>
+              <div class="product-card-laptop">
+                <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                <h3>Stonnington Modular Sofa <span class="rightarrow">&rarr;</span></h3>
+              </div>
+              <div class="product-card-laptop">
+                <img src="stonnington.png" class="default-img" alt="Stonnington Modular Sofa">
+                <h3>Stonnington Modular Sofa <span class="rightarrow">&rarr;</span></h3>
+              </div>
+              <button class="show-more-laptop">All Results &rarr;</button>
+            </div>
+          </div>
+        </div>
+
         <!-- Cart Overlay -->
         <section class="cart-overlay">
             <div class="cart-header">
@@ -602,6 +638,30 @@
                 if (e.target === overlay) {
                   overlay.classList.remove('open');
                   document.body.classList.remove('seating-overlay-open');
+                }
+              });
+            }
+
+            // Laptop search overlay open/close
+            const searchIconLaptop = document.querySelector('.nav-icons .icon-link[aria-label="Search"]');
+            const searchOverlayLaptop = document.getElementById('searchOverlayLaptop');
+            const closeSearchLaptop = document.getElementById('closeSearchLaptop');
+            if (searchIconLaptop && searchOverlayLaptop && closeSearchLaptop) {
+              searchIconLaptop.addEventListener('click', function(e) {
+                if (isLaptop()) {
+                  e.preventDefault();
+                  searchOverlayLaptop.classList.add('visible');
+                  document.body.classList.add('search-overlay-laptop-open');
+                }
+              });
+              closeSearchLaptop.addEventListener('click', function() {
+                searchOverlayLaptop.classList.remove('visible');
+                document.body.classList.remove('search-overlay-laptop-open');
+              });
+              searchOverlayLaptop.addEventListener('click', function(e) {
+                if (e.target === searchOverlayLaptop) {
+                  searchOverlayLaptop.classList.remove('visible');
+                  document.body.classList.remove('search-overlay-laptop-open');
                 }
               });
             }
