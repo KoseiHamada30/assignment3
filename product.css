@@ -389,12 +389,16 @@ footer {
     border: none;
     border-radius: 1vw;
     padding: 0.6rem 2rem;
-    font-weight: bold;
+    font-weight: initial;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
 }
 .add-to-cart:hover {
+    background: #a32e32;
+}
+
+.checkout-button:hover {
     background: #a32e32;
 }
 
@@ -2065,7 +2069,7 @@ footer {
     .remove-item {
         background: none;
         border: none;
-        color: #BD3E43;
+        color: #757575;
         font-family: Alexandria;
         font-size: 0.8rem;
         cursor: pointer;
@@ -2163,7 +2167,7 @@ footer {
         gap: 20px;
         margin-top: 5px;
     }
-    
+
     .prices {
         display: flex;
         flex-direction: column;
