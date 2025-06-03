@@ -168,6 +168,7 @@ a {
 .section-title input[type="radio"] {
     width: 1.5rem;
     height: 1.5rem;
+    accent-color: #111;
 }
 #customer-email {
     border-radius: 0.9rem;
@@ -357,6 +358,424 @@ hr {
   }
 
   hr {
+    margin: 0;
+  }
+}
+
+/* Hide/show containers based on screen size */
+.payment-laptop { display: none; }
+.payment-mobile { display: block; }
+
+@media screen and (max-width: 1368px) and (min-width: 391px) {
+  .payment-laptop {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: #F7F4F2;
+    padding: 2.5rem 0;
+    gap: 4vw;
+  }
+  .payment-header-laptop {
+    display: block;
+    position: absolute;
+    left: 4vw;
+    top: 2vw;
+    margin-top: 2rem;
+  }
+  .payment-logo-laptop {
+    width: 180px;
+    height: auto;
+  }
+  .payment-breadcrumb-laptop {
+    font-size: 1rem;
+    color: #969696;
+    margin: 6.5rem 0 2.5rem 0;
+    text-align: left;
+    font-family: Alexandria;
+  }
+  .payment-main-laptop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .payment-form-laptop {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 700px;
+    margin-right: 0;
+    padding-left: 2rem;
+  }
+  .express-checkout-title-laptop {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: initial;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .apple-pay-btn-laptop {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    font-family: Alexandria;
+    padding: 0.8rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    justify-content: flex-start;
+    font-weight: initial;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-left: 7.5rem;
+    margin-right: 7rem;
+    margin-bottom: 2rem;
+  }
+  .divider-row-laptop {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #888;
+    font-size: 1.1rem;
+    margin: 0 0 2rem 0;
+    font-family: Alexandria;
+  }
+  .divider-row-laptop span {
+    flex: 1;
+    border-bottom: 1.5px solid #bdbdbd;
+    margin: 0 0.7rem;
+  }
+  .customer-section-laptop,
+  .shipping-section-laptop,
+  .billing-section-laptop,
+  .payment-section-laptop {
+    margin-bottom: 1.8rem;
+  }
+  .section-title-laptop {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: initial;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .section-title-laptop input[type="radio"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color: #111;
+    margin-right: 0.7rem;
+  }
+  .customer-email-row-laptop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .customer-email-label-wrap-laptop label {
+    font-size: 1.1rem;
+    color: #757575;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .customer-email-input-btn-row-laptop {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    align-items: center;
+    width: 100%;
+  }
+  .customer-email-input-btn-row-laptop input[type="email"] {
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 0.5rem;
+    border: 1.5px solid #bdbdbd;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    font-family: Alexandria;
+    background: #fff;
+  }
+  .customer-email-input-btn-row-laptop .continue-btn-laptop {
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    border: none;
+    background: #111;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+    font-family: Alexandria;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .laptop-hr {
+    border: none;
+    border-top: 1.5px solid #bdbdbd;
+    margin: 1.5rem 0;
+  }
+  .shipping-section-laptop {
+    display: block !important;
+  }
+  .shipping-details-laptop {
+    margin-bottom: 1.2rem;
+    color: #919191;
+  }
+  .shipping-row-laptop {
+    font-size: 1.1rem;
+    color: #919191;
+    font-family: Alexandria;
+    align-self: flex-start;
+    margin-left: 2rem;
+    margin-top: 0.2rem;
+    font-weight: 700;
+  }
+  .billing-section-laptop .section-title-laptop {
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+  }
+  .billing-details-laptop {
+    font-size: 1.1rem;
+    color: #919191;
+    margin-bottom: 0.7rem;
+    font-family: Alexandria;
+  }
+  .payment-section-laptop .section-title-laptop {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+  }
+  .payment-method-card-laptop {
+    background: #E0E0E0;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    margin-bottom: 0;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    position: relative;
+    border: none;
+  }
+  .payment-method-card-laptop.selected {
+    background-color: #B1B1B1;
+    transition: background 0.2s;
+    margin-bottom: 1rem;
+  }
+  .payment-method-radio-laptop {
+    position: absolute;
+    left: 1.2rem;
+    top: 1.5rem;
+  }
+  .payment-method-card-laptop input[type="radio"] {
+    accent-color: #111;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  .payment-method-icons-laptop {
+    display: flex;
+    gap: 0.7rem;
+    margin-left: 2.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .payment-method-icons-laptop img {
+    width: 48px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 0.3rem;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  .payment-method-card-laptop input[type="text"] {
+    border-radius: 0.5rem;
+    border: 1px solid #111;
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    font-family: Alexandria;
+    margin-bottom: 0.5rem;
+    background: #fff;
+  }
+  .payment-card-row-laptop {
+    display: flex;
+    gap: 0.7rem;
+  }
+  .payment-card-row-laptop input[type="text"] {
+    width: 8.8rem;
+  }
+  .payment-method-logo-laptop {
+    width: 110px;
+    height: 36px;
+    object-fit: contain;
+    margin-left: 2.2rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.2rem 0.5rem;
+  }
+  .payment-method-card-laptop + .payment-method-card-laptop {
+    border-radius:1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-top: 2px solid #ccc;
+    background: #EAEAEA;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .place-order-btn-laptop {
+    display: block;
+    width: 70%;
+    margin: 2.5rem 4.3rem 0rem 4.3rem;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    font-family: Alexandria;
+    font-weight: initial;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    text-align: center;
+  }
+  .order-summary-card-laptop {
+    width: 340px;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    margin-right: 1.5rem;
+    align-self: flex-start;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    border-radius: 2rem;
+    background:#F7F4F2;
+    padding: 2.2rem 2rem 1.7rem 2rem;
+  }
+  .order-summary-card-laptop h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+  }
+  .order-summary-content-laptop {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .summary-product-img-laptop {
+    width: 120px;
+    height: 80px;
+    border-radius: 1rem;
+    object-fit: cover;
+    background: #F7F4F2;
+  }
+  .summary-product-details-laptop {
+    text-align: left;
+  }
+  .summary-product-title-laptop {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+  .summary-product-desc-laptop {
+    font-size: 1rem;
+    color: #555;
+  }
+  .order-summary-table-laptop {
+    margin: 1.2rem 0 0.7rem 0;
+  }
+  .summary-row-laptop {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 0.3rem;
+  }
+  .discount-row-laptop {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.7rem 0 1.2rem 0;
+  }
+  .discount-input-laptop {
+    flex: 1;
+    border-radius: 0.7rem;
+    border: 1.5px solid #bdbdbd;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    font-family: Alexandria;
+  }
+  .discount-apply-laptop {
+    border-radius: 0.7rem;
+    border: none;
+    background: #EAEAEA;
+    color: #222;
+    font-size: 1rem;
+    padding: 0.4rem 1.1rem;
+    font-family: Alexandria;
+    cursor: pointer;
+  }
+  .summary-total-row-laptop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: initial;
+    margin-top: 0.7rem;
+    color: #222;
+    border-top: 1px solid #8f8f8f;
+    padding-top: 1rem;
+  }
+  .summary-total-amount-laptop {
+    font-size: 1.7rem;
+    color: #222;
+    font-weight: initial;
+  }
+  .payment-mobile { display: none !important; }
+  .shipping-info-laptop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+  }
+  .shipping-info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1 1 60%;
+    padding-right: 0.7rem;
+    border-right:1px solid #9d9d9d;
+  }
+  .shipping-info-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-width: 120px;
+    margin-top: 5rem;
+  }
+  .shipping-info-right span {
+    margin-left: 0.5vw;
+    margin-right: 1vw;
+  }
+  .shipping-row-laptop {
+    font-size: 1.1rem;
+    font-family: Alexandria;
+    font-weight: 700;
     margin: 0;
   }
 }
