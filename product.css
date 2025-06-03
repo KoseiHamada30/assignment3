@@ -898,7 +898,7 @@ footer {
     }
 
     .product-rating {
-        font-size: 2.5rem; 
+        font-size: 1.5rem; 
     }
 
     .top-review-btn {
@@ -1147,6 +1147,322 @@ footer {
 
     .review-stars {
         font-size: 1.5rem;
+    }
+
+    /*cart*/
+    .cart-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        min-width: 400px;
+        max-width: 600px;
+        height: 100vh;
+        background: #F7F4F2;
+        z-index: 2001;
+        overflow-y: auto;
+        box-shadow: -8px 0 24px rgba(0,0,0,0.15);
+        padding: 1rem 2.5rem 2rem 2.5rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        display: none;
+        margin-top: 5rem;
+    }
+    .cart-overlay.visible {
+        display: block;
+    }
+    body.cart-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.18);
+        z-index: 2000;
+    }
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        border-bottom: 1.5px solid #d6d3ce;
+        text-align: center;
+    }
+    .cart-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        font-weight: normal;
+        margin: auto;
+    }
+    .close-cart {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #1F1F1F;
+        cursor: pointer;
+    }
+    .cart-breadcrumb {
+        font-family: Alexandria;
+        font-size: 1.1rem;
+        color: #757575;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+    }
+    .cart-items {
+        margin-bottom: 2rem;
+    }
+    .cart-item {
+        display: flex;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 1.5rem;
+    }
+    .item-image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    .cart-item img {
+        width: 240px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .item-badges {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-top: 0.3rem;
+    }
+    .badge {
+        font-family: Alexandria;
+        font-size: 1rem;
+        padding: 4px 10px;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 1.2;
+    }
+    .top-sale {
+        background-color: #DF0000;
+        color: #fff;
+    }
+    .discount {
+        background-color: #FFD700;
+        color: #DF0000;
+    }
+    .item-qty {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.8rem;
+    }
+    .item-qty button {
+        background-color: #ddd;
+        border: none;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .item-qty span {
+        font-family: Alexandria;
+        font-size: 1.1rem;
+        padding: 0 7px;
+    }
+    .item-details {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .item-details h3 {
+        font-family: Alexandria;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+    }
+    .item-details p {
+        font-family: Alexandria;
+        font-size: 0.95rem;
+        color: #555;
+        margin: 0 0 0.2rem 0;
+    }
+    .in-stock-day p {
+        margin: 0.5rem 0 0.5rem 0;
+        font-size: 1.3rem;
+    }
+    .item-price-qty {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 2.7rem;
+    }
+    .item-initial-price {
+        font-family: Alexandria;
+        font-size: 1rem;
+        color: #999;
+        text-decoration: line-through;
+        margin-bottom: 0rem;
+        margin-left: 0rem;
+    }
+    .item-price {
+        font-family: Alexandria;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #DF0000;
+    }
+    .remove-item {
+        background: none;
+        border: none;
+        color: #757575;
+        font-family: Alexandria;
+        font-size: 0.95rem;
+        cursor: pointer;
+        padding: 0;
+        text-decoration: underline;
+        margin-left: 1rem;
+    }
+    .maybe-you-like {
+        margin-bottom: 2rem;
+    }
+    .maybe-you-like h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.7rem;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .like-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .like-item {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 1.2rem;
+    }
+    .like-item img {
+        width: 200px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .like-details-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+        margin-left: 1.2rem;
+    }
+    .like-details h3 {
+        font-family: Alexandria;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+    }
+    .price-button-group {
+        display: flex;
+        align-items: center;
+        gap: 12.4rem;
+    }
+    .prices {
+        display: flex;
+        flex-direction: column;
+    }
+    .like-details .initial-price {
+        font-family: Alexandria;
+        font-size: 0.95rem;
+        color: #999;
+        text-decoration: line-through;
+        margin: 0;
+    }
+    .like-details .current-price {
+        font-family: Alexandria;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #DF0000;
+        margin: 0;
+    }
+    .like-item .add-to-cart {
+        background-color: #1F1F1F;
+        color: #fff;
+        border: none;
+        border-radius: 0.8vw;
+        padding: 7px 18px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: Alexandria;
+    }
+    .order-summary {
+        margin-top: 2.5rem;
+        border-radius: 1.2rem;
+        box-shadow: 1px 3px 8px 15px rgba(0,0,0,0.04);
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+    }
+    .order-summary h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        margin-top: 1rem;
+        padding-bottom: 0.7rem;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-family: Alexandria;
+    }
+    .summary-row span:first-child {
+        color: #555;
+    }
+    .summary-row.sale-savings span:last-child {
+        color: #DF0000;
+        font-weight: 600;
+    }
+    .summary-row.total {
+        font-size: 2rem;
+        font-weight:initial;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 1rem;
+        margin-top: 1.2rem;
+    }
+    .checkout-button {
+        display: block;
+        width: 100%;
+        background-color: #1F1F1F;
+        color: #fff;
+        border: none;
+        border-radius: 1vw;
+        padding: 15px;
+        font-family: Alexandria;
+        font-size: 1.3rem;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 1.5rem;
+    }
+
+    body.cart-open {
+        overflow: hidden;
+        height: 100vh;
     }
 }
 
@@ -2024,16 +2340,6 @@ footer {
         font-size: 0.8rem;
     }
 
-    .item-price-qty {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
     .item-price {
         font-family: Alexandria;
         font-size: 1.1rem;
@@ -2045,6 +2351,7 @@ footer {
         margin-top: 0.5rem;
         display: flex;
         gap: 2vw;
+        font-size: 2rem;align-items: center;
     }
 
     .item-qty button {
@@ -2063,7 +2370,7 @@ footer {
     .item-qty span {
         font-family: Alexandria;
         font-size: 1rem;
-        padding: 0 5px;
+        padding: 0px;
     }
 
     .remove-item {
@@ -2204,12 +2511,11 @@ footer {
     }
 
     .like-item .add-to-cart {
-        font-family: Alexandria;
         background-color: #1F1F1F;
         color: #fff;
         border: none;
-        border-radius: 2vw;
-        padding: 8px 13px;
+        border-radius: 1.5vw;
+        padding: 5px 10px;
         font-size: 0.8rem;
         cursor: pointer;
         align-self: flex-start;
@@ -2265,6 +2571,374 @@ footer {
         font-family: Alexandria;
         font-size: 1.1rem;
         font-weight: 500;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile Cart Styles */
+@media screen and (max-width: 390px) {
+    .cart-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 90%;
+        height: 100%;
+        background-color: #F7F4F2; /* Match background */
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Add shadow to the left */
+        z-index: 1001; /* Above other content but below navbar */
+        overflow-y: auto;
+        padding-top: 4rem;
+        padding-left: 1rem;
+        padding-right: 0rem;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        min-width: 90%;
+        margin-top: 0;
+    }
+
+    .cart-overlay.visible {
+        transform: translateX(0); 
+        display: block; 
+    }
+
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .cart-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: normal;
+        margin:0 7rem;
+    }
+
+    .close-cart {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #1F1F1F;
+        cursor: pointer;
+    }
+
+    .cart-breadcrumb {
+        font-family: Alexandria;
+        font-size: 0.8rem;
+        color: #757575;
+        margin-bottom: 20px;
+    }
+
+    .cart-items {
+        margin-bottom: 20px;
+    }
+
+    .cart-item {
+        display: flex;
+        gap: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 15px;
+    }
+
+    .item-image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        width: auto;
+    }
+
+    .cart-item img {
+        width: 135px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .item-details {
+        flex-grow: 1;
+    }
+
+    .item-details h3 {
+        font-family: Alexandria;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin: 0 0 5px 0;
+    }
+
+    .item-details p {
+        font-family: Alexandria;
+        font-size: 0.6rem;
+        color: #555;
+        margin: 0 0 3px 0;
+    }
+
+    .in-stock-day p {
+        margin-top: 0.6rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .item-price-qty {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.9rem;
+        margin-top: 3px;
+    }
+    .item-initial-price {
+        font-family: Alexandria;
+        font-size: 0.7rem;
+        color: #999;
+        text-decoration: line-through;
+        margin-bottom: 0rem;
+        margin-left: 0rem;
+    }
+    .item-price {
+        font-family: Alexandria;
+        font-size: 0.9rem;
+        font-weight: initial;
+        color: #DF0000;
+    }
+
+    .item-qty {
+        margin-top: 0.5rem;
+        display: flex;
+        gap: 2vw;
+    }
+
+    .item-qty button {
+        background-color: #ddd;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item-qty span {
+        font-family: Alexandria;
+        font-size: 1rem;
+        padding: 0px;
+    }
+
+    .remove-item {
+        background: none;
+        border: none;
+        color: #757575;
+        font-family: Alexandria;
+        font-size: 0.6rem;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 0rem;
+        margin-right: 1rem;
+    }
+
+    .item-badges {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap:15px;
+        align-items: center;
+    }
+
+    .badge {
+        font-family: Alexandria;
+        padding: 5px 10px;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 1.2;
+        font-size: 2.5vw;
+    }
+
+    .top-sale {
+        font-family: Alexandria;
+        background-color: #DF0000;
+        color:#fff;
+        font-weight: normal;
+    }
+
+    .discount {
+        font-family: Alexandria;
+        background-color: #FDD836;
+        color: #DF0000;
+        font-weight: normal;
+    }
+
+    .maybe-you-like h4,
+    .order-summary h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        font-weight: initial;
+        text-align: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .like-items {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px; /* Space between items */
+        /* Remove horizontal scrolling properties */
+        overflow-x: visible;
+        padding-bottom: 0;
+        scrollbar-width: auto;
+        -ms-overflow-style: auto;
+    }
+
+    .like-items::-webkit-scrollbar {
+        display: auto;
+    }
+
+    .like-item {
+        display: flex;
+        gap: 10px; 
+        width: auto;
+        text-align: left; 
+        padding-bottom: 15px;
+    }
+
+    .like-image-container {
+        display: flex;
+        flex-direction: column; /* Stack image and badges vertically */
+        align-items: center; /* Center image and badges */
+        gap: 5px; /* Space between image and badges */
+    }
+
+    .like-item img {
+        width: 135px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 0;
+    }
+
+    .like-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .price-button-group {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        margin-top: 5px;
+    }
+    
+    .prices {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .like-details-container {
+        display: flex;
+        flex-direction: column; 
+        flex-grow: 1;
+        justify-content: space-between;
+        margin-left: 0rem;
+        margin-right: 1.5rem;
+    }
+
+    .like-details h3 {
+        font-family: Alexandria;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin: 0 0 11px 0;
+    }
+
+    .like-details .initial-price {
+        font-family: Alexandria;
+        font-size: 0.8rem;
+        color: #999;
+        text-decoration: line-through;
+        margin: 0;
+    }
+
+    .like-details .current-price {
+        font-family: Alexandria;
+        font-size: 1rem;
+        font-weight: initial;
+        color: #DF0000;
+        margin: 0 0 10px 0;
+    }
+
+    .like-item .add-to-cart {
+        background-color: #1F1F1F;
+        color: #fff;
+        border: none;
+        border-radius: 1.5vw;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        align-self: flex-start;
+        white-space: nowrap;
+    }
+
+    .badge {
+        font-family: Alexandria;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .order-summary {
+        margin-top: 20px;
+        margin-right: 1rem;
+        padding: 1rem;
+    }
+
+    .order-summary h4 {
+        margin-top: 1rem;
+    }
+
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-family: Alexandria;
+        font-size: 1rem;
+    }
+
+    .summary-row.sale-saving span {
+        color: #DF0000;
+    }
+
+    .summary-row.sale-savings span:last-child {
+        color: #DF0000;
+    }
+
+    .summary-row.total {
+        font-size: 1.5rem;
+        font-weight: initial;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 10px;
+        margin-top: 15px;
+    }
+
+    .checkout-button {
+        display: block;
+        width: 100%;
+        background-color: #1F1F1F;
+        color: #fff;
+        border: none;
+        border-radius: 2vw;
+        padding: 10px;
+        font-family: Alexandria;
+        font-size: 1.3rem;
+        font-weight: initial;
         cursor: pointer;
         margin-top: 20px;
     }
