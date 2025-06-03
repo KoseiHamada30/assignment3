@@ -58,6 +58,43 @@
             <a href="#" class="icon-link" aria-label="Shopping cart"><i class="fas fa-shopping-cart fa-2x"></i></a>
         </div>
     </nav>
+    <!-- Seating Overlay for Laptop -->
+    <div class="seating-overlay" id="seatingOverlay">
+      <button class="close-seating-overlay" id="closeSeatingOverlay">&times;</button>
+      <div class="seating-overlay-content">
+        <a href="#" class="seating-link">New Arrival</a>
+        <a href="#" class="seating-link">Clearance</a>
+        <div class="seating-section">
+          <div class="seating-title">Seating</div>
+          <div class="submenu-section">
+            <div class="submenu-title">Configuration</div>
+            <ul>
+              <li><a href="itemlist.html">Corner Lounges</a></li>
+              <li><a href="#">Chaise Lounge</a></li>
+              <li><a href="#">L Shaped Lounges</a></li>
+              <li><a href="#">Modular sofas</a></li>
+              <li><a href="#">Recliners</a></li>
+              <li><a href="#">Sofa Beds</a></li>
+            </ul>
+          </div>
+          <div class="submenu-section">
+            <div class="submenu-title">Seats</div>
+            <ul>
+              <li><a href="#">2 Seaters</a></li>
+              <li><a href="#">3 Seaters</a></li>
+              <li><a href="#">4 Seater Couches and Sofas</a></li>
+              <li><a href="#">Armchairs / Accent Chair</a></li>
+              <li><a href="#">Ottomans & Accent Bench</a></li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="seating-link">Living</a>
+        <a href="#" class="seating-link">Dining</a>
+        <a href="#" class="seating-link">Bedroom</a>
+      </div>
+    </div>
+    </div>
+
 
     <main>
  <!-- Search Overlay -->
@@ -474,6 +511,31 @@
                         body.classList.add('no-scroll');
                     }
                 });
+            }
+
+            // Seating overlay open/close for laptop
+            const seatingNav = document.querySelector('.nav-dropdown > .nav-link');
+            const overlay = document.getElementById('seatingOverlay');
+            const closeBtn = document.getElementById('closeSeatingOverlay');
+            function isLaptop() { return window.innerWidth <= 1368 && window.innerWidth > 390; }
+            if (seatingNav && overlay && closeBtn) {
+              seatingNav.addEventListener('click', function(e) {
+                if (isLaptop()) {
+                  e.preventDefault();
+                  overlay.classList.add('open');
+                  document.body.classList.add('seating-overlay-open');
+                }
+              });
+              closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('open');
+                document.body.classList.remove('seating-overlay-open');
+              });
+              overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                  overlay.classList.remove('open');
+                  document.body.classList.remove('seating-overlay-open');
+                }
+              });
             }
 
 

@@ -866,6 +866,105 @@ footer {
         color: #BD3E43;
     }
 
+    .seating-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 500px;
+        max-width: 90vw;
+        height: 100vh;
+        background: #F7F4F2;
+        z-index: 2002;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.13);
+        border-top-right-radius: 5rem;
+        border-bottom-right-radius: 3rem;
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        overflow-y: auto;
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+        transform: translateX(-100%);
+    }
+    .seating-overlay.open {
+        display: block;
+        transform: translateX(0);
+    }
+    .close-seating-overlay {
+        top: 1.2rem;
+        left: 1.2rem;
+        background: none;
+        border: none;
+        font-size: 3rem;
+        color: #1F1F1F;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .seating-overlay-content {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        font-family: Alexandria;
+    }
+    .seating-link {
+        font-family: Alexandria, sans-serif;
+        font-size: 2rem;
+        font-weight: initial;
+        color: #1F1F1F;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        border-bottom: 1.5px solid #bdbdbd;
+        padding-bottom: 0.2rem;
+        transition: color 0.2s;
+        width: 100%;
+        display: block;
+    }
+    .seating-link:hover {
+        color: #BD3E43;
+    }
+    .seating-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+        margin-top: 0.7rem;
+        color: #BD3E43;
+        border-bottom: 1.5px solid #bdbdbd;
+        padding-bottom: 0.2rem;
+    }
+
+    .submenu-section {
+        margin-bottom: 1.2rem;
+    }
+    .submenu-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        color: #1F1F1F;
+    }
+    .submenu-section ul {
+        list-style: none;
+        padding: 0 0 0 1.2rem;
+        margin: 0;
+    }
+    .submenu-section li {
+        margin-bottom: 0.3rem;
+    }
+    .submenu-section li a {
+        font-size: 1.3rem;
+        color: #222;
+        text-decoration: none;
+        font-family: Alexandria, sans-serif;
+        transition: color 0.2s;
+        display: block;
+        padding: 0.2rem 0;
+    }
+    .submenu-section li a:hover {
+        color: #BD3E43;
+    }
+    body.seating-overlay-open {
+        overflow: hidden;
+    }
+
     .product-hero {
         display: flex;
         gap: 2rem;
@@ -1522,6 +1621,9 @@ footer {
     }
 
     .nav-links.show {
+        width: 80%;
+        border-top-right-radius: 10vw;
+        margin-top: 0.4rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
