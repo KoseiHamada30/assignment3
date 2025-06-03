@@ -393,13 +393,7 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
-}
-.add-to-cart:hover {
-    background: #a32e32;
-}
-
-.checkout-button:hover {
-    background: #a32e32;
+    font-family: Alexandria;
 }
 
 /* Accordion */
@@ -1985,7 +1979,7 @@ footer {
     }
     .add-to-cart {
         font-size: 4.1vw;
-        padding: 2vw 9vw;
+        padding: 2vw 8.9vw;
         border-radius: 2vw;
         margin-left: 9vw;
     }

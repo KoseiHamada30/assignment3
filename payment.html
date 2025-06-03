@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=390, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TFP Payment</title>
+  <link rel="stylesheet" href="payment.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="payment-header">
+    <img src="logo.jpg" alt="TFP Logo" class="payment-logo">
+  </header>
+  <div class="payment-breadcrumb">Cart &gt; Information &gt; <b>Payment</b></div>
+  <section class="order-summary-card">
+    <h2>Order Summary</h2>
+    <div class="order-summary-content">
+      <img src="stonnington.png" alt="Stonnington Modular Sofa" class="summary-product-img">
+      <div class="summary-product-details">
+        <div class="summary-product-title">Stonnington Modular Sofa</div>
+        <div class="summary-product-desc">Frame: Wood<br>Material: Fabric<br>Chaise: Left Arm</div>
+      </div>
+    </div>
+    <div class="order-summary-table">
+      <div class="summary-row"><span>Subtotal</span><span>$ 2399</span></div>
+      <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+      <div class="summary-row"><span>Tax</span><span>$ 120</span></div>
+    </div>
+    <div class="discount-row">
+      <input type="text" placeholder="Discount Code" class="discount-input">
+      <button class="discount-apply">Apply</button>
+    </div>
+    <div class="summary-total-row">
+      <span>Total</span><span class="summary-total-amount">$ 2519</span>
+    </div>
+  </section>
+  <section class="express-checkout">
+    <h2>Express Checkout</h2>
+    <button class="apple-pay-btn"><i class="fab fa-apple"></i> Apple Pay</button>
+  </section>
+  <div class="divider-row"><span></span>OR<span></span></div>
+  <section class="customer-section">
+    <div class="section-title"><input type="radio" checked>Customer</div>
+    <div class="customer-email-row">
+      <div class="customer-email-label-wrap">
+        <label for="customer-email">Email</label>
+      </div>
+      <div class="customer-email-input-btn-row">
+        <input type="email" id="customer-email" value="JChan@gmail.com">
+        <button class="continue-btn">Continue</button>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="shipping-section">
+    <div class="section-title"><p style="margin-top: 6vw;">2</p><p>Shipping</p></div>
+    <div class="shipping-details">
+      <p>Jackie Chan</p>
+      <p>04 000 000 001</p>
+      <p>15 Bromyard St, Yarraville VIC 3013</p>
+    </div>
+    <div class="shipping-row"><span>Shipping:</span><span>Free</span></div>
+  </section>
+  <hr>
+  <section class="billing-section">
+    <div class="section-title"><p style="margin-top: 6vw;">3</p> <p>Billing</p></div>
+    <div class="billing-details">Same as Shipping Address</div>
+  </section>
+  <hr>
+  <section class="payment-section">
+    <div class="section-title"><p style="margin-top: 6vw;">4</p> <p>Payment</p></div>
+    <div class="payment-method-card selected">
+      <div class="payment-method-radio"><input type="radio" checked></div>
+      <div class="payment-method-icons">
+        <img src="visa.png" alt="Visa">
+        <img src="mastercard.png" alt="Mastercard">
+        <img src="amex.png" alt="Amex">
+        <img src="jcb.png" alt="JCB">
+      </div>
+      <input type="text" placeholder="Card Number">
+      <div class="payment-card-row">
+        <input type="text" placeholder="Expiry Date">
+        <input type="text" placeholder="CVC">
+      </div>
+      <input type="text" placeholder="Name on Card">
+    </div>
+    <div class="payment-method-card">
+      <div class="payment-method-radio"><input type="radio"></div>
+      <img src="paypal.png" alt="PayPal" class="payment-method-logo">
+    </div>
+    <div class="payment-method-card">
+      <div class="payment-method-radio"><input type="radio"></div>
+      <img src="afterpay.png" alt="Afterpay" class="payment-method-logo">
+    </div>
+  </section>
+  <button class="place-order-btn">Place Order</button>
+  <script>
+    // Ensure only one radio in .payment-section can be checked at a time (standard radio group behavior)
+    document.addEventListener('DOMContentLoaded', function() {
+      const radios = document.querySelectorAll('.payment-section input[type="radio"]');
+      radios.forEach(function(radio) {
+        radio.addEventListener('click', function() {
+          radios.forEach(function(other) {
+            if (other !== radio) other.checked = false;
+          });
+          // Highlight the selected card
+          document.querySelectorAll('.payment-method-card').forEach(function(card) {
+            card.classList.remove('selected');
+          });
+          if (radio.checked) {
+            let card = radio.closest('.payment-method-card');
+            if (card) card.classList.add('selected');
+          }
+        });
+      });
+      // On page load, ensure the selected class matches the checked radio
+      radios.forEach(function(radio) {
+        if (radio.checked) {
+          let card = radio.closest('.payment-method-card');
+          if (card) card.classList.add('selected');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
