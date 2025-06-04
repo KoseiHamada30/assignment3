@@ -358,11 +358,6 @@ html, body {
         border-radius: 4vw;
     }
 
-    .filter-btn:hover {
-        background: var(--accent);
-        color: #fff;
-    }
-
     .section-title {
         font-size: 6vw;
         font-weight: initial;
@@ -1444,10 +1439,7 @@ footer {
         padding: 1vw 4vw;
         border-radius: 4vw;
     }
-    .filter-btn:hover {
-        background: var(--accent);
-        color: #fff;
-    }
+
     .filter-overlay {
         display: none;
         position: fixed;
@@ -1575,15 +1567,15 @@ footer {
     }
 
     .submenu-section li a {
-        font-size: 3.5vw; /* Adjust size as needed */
-        color: #4F4F4F; /* Adjust color */
-        text-decoration: none; /* Remove default underline */
-        padding: 0.3rem 0; /* Adjust padding */
+        font-size: 3.5vw;
+        color: #4F4F4F;
+        text-decoration: none; 
+        padding: 0.3rem 0; 
         display: block;
     }
 
     .submenu-section li a:hover {
-        color: #BD3E43; /* Adjust hover color */
+        color: #BD3E43; 
     }
 
     .dropdown-arrow {
