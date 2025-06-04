@@ -898,7 +898,8 @@ footer {
     }
 
     .product-card img {
-        height: 18vw;
+        height: 20vw;
+        object-fit: contain;
     }
 
     .product-card .overlay {
@@ -906,7 +907,7 @@ footer {
     }
 
     .product-card .overlay img {
-        height: 17vw;
+        height: 18vw;
     }
 
     .product-card h3 {
@@ -1381,6 +1382,7 @@ footer {
     .product-card img {
         height: 38vw;
         border-radius: 4vw;
+        object-fit: cover;
     }
 
     .product-card .overlay {
@@ -1397,7 +1399,7 @@ footer {
     }
 
     .product-card .overlay img {
-        height: 38vw;
+        height: 40vw;
         border-radius: 4vw;
     }
 
