@@ -278,6 +278,7 @@ hr {
   accent-color: #111;
   width: 1.4rem;
   height: 1.4rem;
+  margin-top: 0.3rem;
 }
 .payment-method-icons {
   display: flex;
@@ -310,8 +311,8 @@ hr {
 }
 
 .payment-method-logo {
-  width: 90px;
-  height: 28px;
+  width: 150px;
+  height: 50px;
   object-fit: contain;
   margin-left: 2.2rem;
 }
@@ -581,6 +582,7 @@ hr {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
+    margin-top: 1rem;
   }
   .payment-method-icons-laptop {
     display: flex;
@@ -613,13 +615,11 @@ hr {
     width: 8.8rem;
   }
   .payment-method-logo-laptop {
-    width: 110px;
-    height: 36px;
+    width: 250px;
+    height: 60px;
     object-fit: contain;
     margin-left: 2.2rem;
-    background: #fff;
     border-radius: 0.5rem;
-    border: 1px solid #ccc;
     padding: 0.2rem 0.5rem;
   }
   .payment-method-card-laptop + .payment-method-card-laptop {

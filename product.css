@@ -443,7 +443,7 @@ footer {
     font-family: Alexandria;
     display: none;
     padding: 1rem 0 0.5rem 0;
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     color: #222;
     animation: fadeInAccordion 0.3s;
 }
@@ -1069,7 +1069,6 @@ footer {
         font-weight: normal;
         color: #1F1F1F;
         margin: 0.5rem 0 0 0;
-        text-align: center;
     }
     .product-card-laptop .rightarrow {
         font-size: 1.7rem;
@@ -1278,6 +1277,7 @@ footer {
 
     .product-card h3 {
         padding-top: 0;
+        font-size: 1.01rem;
     }
 
     .initial {
@@ -2037,7 +2037,7 @@ footer {
         gap: 2vw;
         padding: 1rem 3vw 0.4rem 3vw;
         border-radius: 6vw;
-        min-width: 80vw;
+        width: 80vw;
         flex: 0 0 auto;
         margin: 0rem 2%;
         box-shadow: 1px 3px 15px 7px rgb(173, 173, 173);
@@ -2427,35 +2427,41 @@ footer {
         margin-top: 0;
     }
 
+
     .search-results .product-card {
-        box-shadow: none;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
         padding: 0;
-        border-radius: 0;
+        border-radius: 1rem;
         background: none;
         align-items: flex-start;
-        min-width: unset; /* Ensure min-width is not interfering */
-        width: auto; /* Allow width to be determined by grid */
-        margin: 0; 
+        width: unset;
+        margin: 0;
+        gap: 0;
     }
 
     .search-results .product-card img {
+        width: 100%;
         height: auto;
         border-radius: 6vw;
     }
     .search-results .product-card h3{
-        font-size: 3vw;
+        font-size: 2.8vw;
         padding: 0.2rem 0;
+        margin-left: 1vw;
+        margin-top: 0rem;
     }
 
     .search-results .show-more {
+        box-shadow: 2px 8px 10px rgba(0,0,0,0.10);
         display: block;
-        margin: 4rem auto;
+        margin: 3rem auto;
         text-align: center;
         background-color: #B7AC9D;
         color: #1F1F1F;
         border: none;
         border-radius: 40px;
-        padding: 0.8rem 1.5rem;
+        padding: 0.5rem 1.5rem;
+        height: 3rem;
         font-size: 4vw;
         cursor: pointer;
         font-family: Alexandria;
