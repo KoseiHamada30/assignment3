@@ -630,6 +630,10 @@ footer {
         padding-top: 0;
     }
 
+    .mega-container .product-card h3 {
+        font-size: 1rem;
+    }
+
     .overlay {
         height: 55%;
     }
@@ -1371,7 +1375,7 @@ footer {
         align-items: flex-start;
         padding: 1rem 3vw 0.4rem 3vw;
         border-radius: 6vw;
-        min-width: 80vw;
+        width: 80vw;
         flex: 0 0 auto;
         margin: 0rem 2%;
         box-shadow: 1px 3px 15px 7px rgb(173, 173, 173);
