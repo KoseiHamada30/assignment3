@@ -877,6 +877,17 @@
                     }
                 });
             });
+
+            // Add-to-cart opens cart overlay
+            document.querySelectorAll('.product-qty-cart .add-to-cart').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const cartOverlay = document.querySelector('.cart-overlay');
+                    if (cartOverlay) {
+                        cartOverlay.classList.add('visible');
+                        document.body.classList.add('no-scroll');
+                    }
+                });
+            });
         });
     </script>
     <script src="script.js"></script>
