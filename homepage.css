@@ -80,7 +80,7 @@ html, body{
 /*hero banner*/
 
 .hero {
-    background-image: url('herobanner.png');
+    background-image: url('images/herobanner.png');
     background-size: cover;
     background-position: center;
     height: 40vw;
@@ -385,7 +385,7 @@ html, body{
 }
 
 .review-carousel {
-    background-image: url('reviews.png');
+    background-image: url('images/reviews.png');
     background-size: cover;
     background-position: center;
     height: 580px;

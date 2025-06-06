@@ -171,7 +171,7 @@ html, body {
 /*hero banner*/
 
 .hero {
-    background-image: url('loungesuites.png');
+    background-image: url('images/loungesuites.png');
     background-size: cover;
     background-position:bottom;
     height: 40vw;
