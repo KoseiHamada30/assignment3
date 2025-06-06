@@ -616,6 +616,7 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         padding: 2rem 2%;
+        height: 43rem;
     }
 
     .mega-container {
@@ -1367,6 +1368,7 @@ footer {
         -ms-overflow-style: none;
         gap: 1rem;
         padding: 1rem 5%;
+        height: auto;
     }
 
     .product-grid::-webkit-scrollbar, .mega-container::-webkit-scrollbar {
